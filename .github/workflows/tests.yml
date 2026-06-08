@@ -1,0 +1,46 @@
+﻿name: tests
+
+on:
+  push:
+    branches:
+      - main
+      - datang/main
+      - datang/dev
+  pull_request:
+    branches:
+      - main
+      - datang/main
+      - datang/dev
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install -r requirements-dev.txt
+
+      - name: Run boundary audit
+        run: python scripts/audit_datang_extension_boundary.py
+
+      - name: Run Datang adapter tests
+        run: python -m pytest tests/test_datang_astock_adapter.py -q
+
+      - name: Run Git governance tests
+        run: python -m pytest tests/test_git_governance.py -q
+
+      - name: Run full test suite
+        run: python -m pytest -q
+

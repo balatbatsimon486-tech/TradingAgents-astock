@@ -217,3 +217,5 @@ __marimo__/
 
 # Cache
 **/data_cache/
+reports/tradingagents_astock/*
+!reports/tradingagents_astock/.gitkeep

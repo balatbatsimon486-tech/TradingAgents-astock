@@ -3,6 +3,11 @@ from unittest.mock import patch
 
 import pytest
 
+pytest.importorskip(
+    "langchain_google_genai",
+    reason="Google provider tests require optional dependency: pip install -e .[google]",
+)
+
 from tradingagents.llm_clients.google_client import GoogleClient
 
 

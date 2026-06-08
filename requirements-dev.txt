@@ -1,0 +1,8 @@
+# Minimal test-only dependencies for this fork.
+#
+# Runtime dependencies are declared in pyproject.toml and installed with:
+#   python -m pip install -e .
+#
+# Keep this file small: optional provider SDKs that conflict with the A-stock
+# runtime stack should stay out of the default CI environment.
+pytest>=8.0
