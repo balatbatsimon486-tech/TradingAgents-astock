@@ -1,0 +1,19 @@
+{
+  "symbol": "000001.SZ",
+  "trade_date": "2026-06-09",
+  "model_name": "offline-mock-model-no-api",
+  "analysis_mode": "offline_smoke",
+  "final_signal": "BUY",
+  "confidence": 0.62,
+  "risk_flags": [
+    "offline_fixture",
+    "not_validated_trade_signal"
+  ],
+  "policy_summary": "Synthetic policy note for an offline smoke test. No live policy feed was called.",
+  "sentiment_summary": "Synthetic sentiment note for an offline smoke test. No social or news API was called.",
+  "technical_summary": "Synthetic technical note for an offline smoke test. No market data interface was called.",
+  "fundamental_summary": "Synthetic fundamental note for an offline smoke test. No financial data provider was called.",
+  "hot_money_summary": "Synthetic hot-money note for an offline smoke test. No Dragon Tiger List endpoint was called.",
+  "lockup_summary": "Synthetic lockup note for an offline smoke test. No lockup or shareholder endpoint was called.",
+  "raw_text": "Offline TradingAgents-astock sample output for adapter validation only. This text is not investment advice and must not be used as a trading signal."
+}
