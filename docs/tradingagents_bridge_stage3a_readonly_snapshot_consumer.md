@@ -1,29 +1,42 @@
 # Stage 3A Read-Only Research Snapshot Consumer
 
 Stage 3A adds a TradingAgents-astock-side consumer for Datang research snapshot
-JSON files. The consumer is read-only and converts a snapshot into a research
-context that future analysts can inspect.
+JSON files. The consumer is read-only and converts an explicitly authorized
+synthetic or exported snapshot into an in-memory research context.
+
+Stage 3A does not prove research quality, strategy quality, or trading validity.
+It does not implement Stage 3B.
 
 ## Boundary
 
-The consumer may read a JSON snapshot exported by Datang's research platform.
+The consumer may read one local JSON snapshot under an explicit `allowed_root`.
 It must not:
 
 - read Tushare tokens or any other credentials
 - import Tushare or call provider APIs
-- read raw parquet data
-- create strategy, signal, recommendation, backtest, expected return, position,
-  or order fields
-- write snapshot JSON files into the repository
-- connect to automatic trading
+- call Qlib, qrun, LLM services, market APIs, brokers, or network interfaces
+- read raw parquet data or live market truth
+- create factors, labels, formal signals, strategy recommendations, backtests,
+  expected returns, positions, target weights, orders, or auto-trade actions
+- write back to datang-quant-platform
+- write snapshot JSON files, research artifacts, reports, or cache files
 
 ## Interface
 
 ```python
+from pathlib import Path
+
 from datang_extensions.ingestion.research_snapshot_reader import read_research_snapshot
 
-result = read_research_snapshot("path/to/snapshot.json")
+result = read_research_snapshot(
+    Path("synthetic_snapshots/snapshot.json"),
+    allowed_root=Path("synthetic_snapshots"),
+)
 ```
+
+`allowed_root` is required. Calls without `allowed_root` fail closed with
+`missing_allowed_root`; the reader does not treat the current working directory
+as trusted.
 
 Successful results use this shape:
 
@@ -36,32 +49,27 @@ Successful results use this shape:
         "source_platform": "datang_quant_platform",
         "allowed_usage": "research_context_only",
         "no_trading_decision": True,
-        "data_quality": {...},
-        "warnings": [...],
-        "errors": [...],
+        "snapshot_id": "synthetic-snapshot-001",
+        "schema_version": "1.0",
+        "source": "datang_quant_platform",
+        "as_of_time": "2026-06-28T09:00:00+00:00",
+        "data_quality": {"passed": True, "errors": [], "warnings": []},
+        "warnings": [],
+        "errors": [],
     },
     "error": None,
 }
 ```
 
-The context preserves `warnings`, `errors`, and `data_quality` so that downstream
-research code cannot hide data-quality caveats.
-
-## Structured Errors
-
-The reader returns structured errors instead of uncaught exceptions:
-
-- `missing_snapshot_file`: the input path does not exist
-- `invalid_json`: the file is not valid JSON
-- `invalid_snapshot_schema`: required fields are missing or invalid
-- `forbidden_trading_field`: strategy or trading-decision fields are present
-- `credential_field_detected`: credential-like fields are present
-- `snapshot_read_error`: the file exists but cannot be read
-
 ## Required Snapshot Fields
 
-The current read-only contract expects:
+The current read-only contract requires:
 
+- `snapshot_id`
+- `schema_version`
+- `source`
+- `as_of_time`
+- `data_quality`
 - `symbol`
 - `trade_date`
 - `source_platform`
@@ -72,60 +80,113 @@ The current read-only contract expects:
 - `latest_ohlcv`
 - `adj_factor`
 - `stock_basic`
-- `data_quality`
 - `warnings`
 - `errors`
 
-`source_platform` must be `datang_quant_platform`.
+String identity fields must be actual strings and must be non-empty after
+trimming. Missing values are not synthesized.
+
+`source` and `source_platform` must both be `datang_quant_platform`.
+
+## Schema Versions
+
+Supported schema versions:
+
+- `1.0`
+
+Unknown, future, empty, or non-string schema versions fail closed with a
+structured error. If both `snapshot_version` and `schema_version` are present,
+they must match. A conflict is rejected and is not silently downgraded.
+
+## Data Quality Gate
+
+`data_quality` must be an object and `data_quality["passed"] is True`.
+
+The following values are rejected:
+
+- `False`
+- `None`
+- `0`
+- `1`
+- `"true"`
+- `"false"`
+- missing `passed`
+
+If `data_quality.errors`, `data_quality.blockers`, or
+`data_quality.critical_issues` is non-empty, the reader fails closed with
+`data_quality_not_passed`. QA failures do not produce a usable research context.
+
+## Time Fields
+
+`as_of_time` must be a timezone-aware ISO-8601 string. `Z` is accepted as UTC.
+Naive datetimes, empty strings, non-strings, and unparsable values are rejected.
+
+If `generated_at` is present, it must also be timezone-aware ISO-8601 and must
+not be earlier than `as_of_time`.
+
+Stage 3A does not infer future returns and does not use content after
+`as_of_time` as a trading signal.
+
+## Path Security
+
+The reader resolves both `snapshot_path` and `allowed_root`, then requires the
+resolved snapshot path to stay under the resolved allowed root. This rejects
+paths outside the root, `../` traversal, and symlink escapes when the platform
+allows symlink tests.
+
+The path must exist, be a regular file, and use the `.json` extension. Directory
+paths, missing files, non-JSON files, and malformed JSON fail safely.
+
+## Structured Errors
+
+The reader returns structured errors instead of uncaught exceptions:
+
+- `missing_allowed_root`
+- `missing_snapshot_file`
+- `path_outside_allowed_root`
+- `snapshot_path_not_file`
+- `invalid_snapshot_extension`
+- `invalid_json`
+- `invalid_snapshot_schema`
+- `unsupported_schema_version`
+- `data_quality_not_passed`
+- `invalid_as_of_time`
+- `invalid_generated_at`
+- `forbidden_trading_field`
+- `credential_field_detected`
+- `snapshot_read_error`
+
+No error path returns partial trusted context.
 
 ## Testing
 
-Tests build temporary JSON files with `tmp_path`. They do not depend on real
+Tests build synthetic JSON files with `tmp_path`. They do not depend on real
 snapshot files under `data/exports/`, do not read tokens, and do not call live
-market data or LLM APIs.
+market data, LLM APIs, Tushare, Qlib, brokers, or network services.
 
-## Current Repository Context
+The tests verify:
 
-The Stage 3A review was performed on the `datang/main` branch of the
-TradingAgents-astock fork. The relevant repository directories are:
+- valid snapshots under `allowed_root` can be loaded
+- missing identity fields fail closed
+- unsupported schema versions fail closed
+- QA failures fail closed
+- timezone-aware time fields are enforced
+- path traversal and root escape are rejected
+- the input file hash and mtime are unchanged after reading
+- no order, position, target-weight, or auto-trade fields are produced
 
-- `datang_extensions/`
-- `scripts/`
-- `tests/`
+## Acceptance Record
 
-This fork does not currently contain `src/` or `datang_adapters/` directories,
-so compile checks for Stage 3A should target the existing directories only.
-
-## Stage 3A Acceptance Record
-
-- `read_research_snapshot(snapshot_path)` returns a read-only research context.
+- `read_research_snapshot(snapshot_path, allowed_root=...)` returns a read-only
+  research context only after schema, QA, time, and path gates pass.
 - The returned context sets `read_only: true`, `allowed_usage:
   "research_context_only"`, and `no_trading_decision: true`.
 - The reader preserves `warnings`, `errors`, and `data_quality`.
-- All expected failure paths return structured errors.
-- Tests create only temporary JSON files through `tmp_path`.
 - `git ls-files data/exports` must remain empty.
 - No real snapshot JSON, credentials, cache files, reports, or API outputs are
   tracked by Git.
-- Forbidden field names in the implementation and tests are guardrails for
-  rejection checks only; they are not generated as trading decisions.
+- Forbidden field names in implementation and tests are guardrails for rejection
+  checks only; they are not generated as trading decisions.
 - Stage 3A does not connect to agent prompts, analyst pipelines, live APIs,
-  Tushare, LLM services, backtesting, portfolio management, or automatic
+  Tushare, LLM services, Qlib, backtesting, portfolio management, or automatic
   trading.
-
-## Pre-Commit Checklist
-
-Run these commands from the repository root before committing Stage 3A:
-
-```powershell
-.\.venv\Scripts\python.exe -m pytest tests\tradingagents_bridge -q
-.\.venv\Scripts\python.exe -m pytest tests -q
-.\.venv\Scripts\python.exe -m compileall datang_extensions scripts tests
-.\.venv\Scripts\python.exe scripts\audit_datang_extension_boundary.py
-git ls-files data/exports
-git diff -- . ':!datang_extensions' ':!docs' ':!tests' ':!scripts' ':!.github' ':!reports' ':!.gitignore' ':!requirements-dev.txt' ':!pytest.ini'
-```
-
-The final `git diff` command must produce no output; any output means an
-official core source file may have been modified and the commit should stop for
-review.
