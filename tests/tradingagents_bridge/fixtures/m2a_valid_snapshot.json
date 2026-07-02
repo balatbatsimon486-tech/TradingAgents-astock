@@ -1,0 +1,56 @@
+{
+  "snapshot_id": "synthetic-m2a-snapshot-001",
+  "schema_version": "1.0",
+  "snapshot_version": "1.0",
+  "source": "datang_quant_platform",
+  "source_platform": "datang_quant_platform",
+  "as_of_time": "2026-06-28T09:00:00+00:00",
+  "generated_at": "2026-06-28T09:05:00+00:00",
+  "symbol": "000001.SZ",
+  "trade_date": "2026-06-28",
+  "data_source": "synthetic_m2a_fixture",
+  "case_id": "synthetic-policy-event-001",
+  "created_at_utc": "2026-06-28T09:05:00Z",
+  "price_window": {
+    "start": "2026-06-01",
+    "end": "2026-06-28",
+    "rows": 20,
+    "synthetic_only": true
+  },
+  "latest_ohlcv": {
+    "open": 10.0,
+    "high": 10.5,
+    "low": 9.8,
+    "close": 10.1,
+    "volume": 100000,
+    "synthetic_only": true
+  },
+  "adj_factor": 1.0,
+  "stock_basic": {
+    "name": "Synthetic Test Company",
+    "exchange": "SZSE",
+    "synthetic_only": true
+  },
+  "data_quality": {
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "synthetic_only": true
+  },
+  "summary": "Synthetic offline policy-event summary for M2A pipeline tests only.",
+  "key_points": [
+    "Synthetic point one; no live policy feed was called.",
+    "Synthetic point two; no model output was generated."
+  ],
+  "risks": [
+    "Synthetic risk note; not investment advice."
+  ],
+  "source_references": [
+    "synthetic://fixture/m2a/001"
+  ],
+  "research_opinion": "BUY",
+  "warnings": [
+    "Synthetic M2A fixture; not a real market snapshot."
+  ],
+  "errors": []
+}
