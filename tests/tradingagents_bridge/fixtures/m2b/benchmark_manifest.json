@@ -1,0 +1,297 @@
+{
+    "benchmark_id":  "tradingagents-m2b-offline-benchmark",
+    "benchmark_version":  "1.0",
+    "evaluation_version":  "1.0",
+    "description":  "Synthetic offline institutional research benchmark",
+    "repeat":  2,
+    "cases":  [
+                  {
+                      "case_id":  "valid-complete-001",
+                      "fixture":  "cases/valid_complete_001.json",
+                      "category":  "valid",
+                      "expected_pipeline_status":  "passed",
+                      "expected_error_code":  null,
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "positive-control"
+                               ]
+                  },
+                  {
+                      "case_id":  "valid-conflicting-evidence-001",
+                      "fixture":  "cases/valid_conflicting_evidence_001.json",
+                      "category":  "valid",
+                      "expected_pipeline_status":  "passed",
+                      "expected_error_code":  null,
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "conflicting-evidence"
+                               ]
+                  },
+                  {
+                      "case_id":  "valid-insufficient-evidence-001",
+                      "fixture":  "cases/valid_insufficient_evidence_001.json",
+                      "category":  "valid",
+                      "expected_pipeline_status":  "passed",
+                      "expected_error_code":  null,
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "insufficient-evidence"
+                               ]
+                  },
+                  {
+                      "case_id":  "valid-timezone-offset-001",
+                      "fixture":  "cases/valid_timezone_offset_001.json",
+                      "category":  "valid",
+                      "expected_pipeline_status":  "passed",
+                      "expected_error_code":  null,
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "timezone"
+                               ]
+                  },
+                  {
+                      "case_id":  "qa-failed-001",
+                      "fixture":  "cases/qa_failed_001.json",
+                      "category":  "snapshot_contract_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "data_quality_not_passed",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "qa-failed"
+                               ]
+                  },
+                  {
+                      "case_id":  "unsupported-schema-001",
+                      "fixture":  "cases/unsupported_schema_001.json",
+                      "category":  "snapshot_contract_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "unsupported_schema_version",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "unsupported-schema"
+                               ]
+                  },
+                  {
+                      "case_id":  "missing-snapshot-identity-001",
+                      "fixture":  "cases/missing_snapshot_identity_001.json",
+                      "category":  "snapshot_contract_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "invalid_snapshot_schema",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "missing-identity"
+                               ]
+                  },
+                  {
+                      "case_id":  "invalid-as-of-time-001",
+                      "fixture":  "cases/invalid_as_of_time_001.json",
+                      "category":  "snapshot_contract_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "invalid_as_of_time",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "invalid-time"
+                               ]
+                  },
+                  {
+                      "case_id":  "malformed-json-001",
+                      "fixture":  "cases/malformed_json_001.json",
+                      "category":  "snapshot_contract_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "invalid_json",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "malformed-json"
+                               ]
+                  },
+                  {
+                      "case_id":  "credential-field-001",
+                      "fixture":  "cases/credential_field_001.json",
+                      "category":  "security_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "credential_field_detected",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "credential-field"
+                               ]
+                  },
+                  {
+                      "case_id":  "forbidden-trading-field-001",
+                      "fixture":  "cases/forbidden_trading_field_001.json",
+                      "category":  "security_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "forbidden_trading_field",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "forbidden-trading-field"
+                               ]
+                  },
+                  {
+                      "case_id":  "stage2-required-field-missing-001",
+                      "fixture":  "cases/stage2_required_field_missing_001.json",
+                      "category":  "stage2_mapping_rejection",
+                      "expected_pipeline_status":  "rejected",
+                      "expected_error_code":  "stage2_input_mapping_failed",
+                      "required_checks":  [
+                                              "snapshot_contract",
+                                              "snapshot_qa",
+                                              "artifact_exists",
+                                              "artifact_schema",
+                                              "research_only_boundary",
+                                              "no_forbidden_trading_fields",
+                                              "no_credential_fields",
+                                              "lineage_preserved",
+                                              "temporal_metadata",
+                                              "deterministic_output",
+                                              "no_external_calls"
+                                          ],
+                      "tags":  [
+                                   "synthetic",
+                                   "stage2-mapping"
+                               ]
+                  }
+              ]
+}

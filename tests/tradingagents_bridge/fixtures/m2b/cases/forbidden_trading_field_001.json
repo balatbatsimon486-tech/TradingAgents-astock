@@ -1,0 +1,63 @@
+{
+    "snapshot_id":  "synthetic-m2b-forbidden-trading-001",
+    "schema_version":  "1.0",
+    "snapshot_version":  "1.0",
+    "source":  "datang_quant_platform",
+    "source_platform":  "datang_quant_platform",
+    "as_of_time":  "2026-06-30T09:00:00+00:00",
+    "generated_at":  "2026-06-30T09:05:00+00:00",
+    "symbol":  "000001.SZ",
+    "trade_date":  "2026-06-30",
+    "data_source":  "synthetic_m2b_fixture",
+    "case_id":  "forbidden-trading-field-001",
+    "created_at_utc":  "2026-06-30T09:05:00Z",
+    "price_window":  {
+                         "start":  "2026-06-01",
+                         "end":  "2026-06-30",
+                         "rows":  20,
+                         "synthetic_only":  true
+                     },
+    "latest_ohlcv":  {
+                         "open":  10,
+                         "high":  10.5,
+                         "low":  9.8,
+                         "close":  10.1,
+                         "volume":  100000,
+                         "synthetic_only":  true
+                     },
+    "adj_factor":  1,
+    "stock_basic":  {
+                        "name":  "Synthetic Benchmark Company",
+                        "exchange":  "SZSE",
+                        "synthetic_only":  true
+                    },
+    "data_quality":  {
+                         "passed":  true,
+                         "errors":  [
+
+                                    ],
+                         "warnings":  [
+
+                                      ],
+                         "synthetic_only":  true
+                     },
+    "summary":  "Synthetic forbidden trading field rejection fixture.",
+    "key_points":  [
+                       "Synthetic benchmark evidence only; no live feed was called.",
+                       "Fixture content is fixed for deterministic offline evaluation."
+                   ],
+    "risks":  [
+                  "Synthetic risk note; not investment advice."
+              ],
+    "source_references":  [
+                              "synthetic://fixture/m2b/forbidden-trading-field-001"
+                          ],
+    "research_opinion":  "BUY",
+    "warnings":  [
+                     "Synthetic M2B fixture; not a real market snapshot."
+                 ],
+    "errors":  [
+
+               ],
+    "position_size":  100
+}

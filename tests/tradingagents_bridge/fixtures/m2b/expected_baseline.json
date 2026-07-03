@@ -1,0 +1,151 @@
+{
+  "benchmark_id": "tradingagents-m2b-offline-benchmark",
+  "benchmark_version": "1.0",
+  "cases": [
+    {
+      "actual_error_codes": [],
+      "actual_pipeline_status": "passed",
+      "benchmark_case_passed": true,
+      "case_id": "valid-complete-001",
+      "expected_error_code": null,
+      "expected_pipeline_status": "passed",
+      "normalized_artifact_hash": "d95cfa6916e80e6695d76110482b4b26e6d969107e9747f47b5685b21fdc433e",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [],
+      "actual_pipeline_status": "passed",
+      "benchmark_case_passed": true,
+      "case_id": "valid-conflicting-evidence-001",
+      "expected_error_code": null,
+      "expected_pipeline_status": "passed",
+      "normalized_artifact_hash": "e90c25d2025aed786e0f18df6ef8960a6d75e79f76d2d5b52db22ee38cebbe9e",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [],
+      "actual_pipeline_status": "passed",
+      "benchmark_case_passed": true,
+      "case_id": "valid-insufficient-evidence-001",
+      "expected_error_code": null,
+      "expected_pipeline_status": "passed",
+      "normalized_artifact_hash": "9cd4b6b576f28cb29675dd32af4926a72990d8d2f35a140cf1ba5e1d4f4a4682",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [],
+      "actual_pipeline_status": "passed",
+      "benchmark_case_passed": true,
+      "case_id": "valid-timezone-offset-001",
+      "expected_error_code": null,
+      "expected_pipeline_status": "passed",
+      "normalized_artifact_hash": "90e87fcbc474ab8898d5fddebd779e4414e1285b18daecf97ffef6a93f8fc474",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "data_quality_not_passed"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "qa-failed-001",
+      "expected_error_code": "data_quality_not_passed",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "unsupported_schema_version"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "unsupported-schema-001",
+      "expected_error_code": "unsupported_schema_version",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "invalid_snapshot_schema"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "missing-snapshot-identity-001",
+      "expected_error_code": "invalid_snapshot_schema",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "invalid_as_of_time"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "invalid-as-of-time-001",
+      "expected_error_code": "invalid_as_of_time",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "invalid_json"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "malformed-json-001",
+      "expected_error_code": "invalid_json",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "credential_field_detected"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "credential-field-001",
+      "expected_error_code": "credential_field_detected",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "snapshot_rejected",
+        "forbidden_trading_field"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "forbidden-trading-field-001",
+      "expected_error_code": "forbidden_trading_field",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    },
+    {
+      "actual_error_codes": [
+        "stage2_input_mapping_failed"
+      ],
+      "actual_pipeline_status": "rejected",
+      "benchmark_case_passed": true,
+      "case_id": "stage2-required-field-missing-001",
+      "expected_error_code": "stage2_input_mapping_failed",
+      "expected_pipeline_status": "rejected",
+      "normalized_artifact_hash": "",
+      "required_checks_matched": true
+    }
+  ],
+  "evaluation_version": "1.0",
+  "manifest_hash": "fb7197737ba61c3c80ec90b6d4d687a859d653099f94166ddc7c276ddcde6643"
+}
