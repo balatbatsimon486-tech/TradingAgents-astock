@@ -1,0 +1,36 @@
+{
+  "adapter_id": "chat-provider-adapter",
+  "adapter_version": "1.0",
+  "authorization_contract_version": "1.0",
+  "authorization_request_id": "auth-request-001",
+  "binding_id": "provider-sandbox-binding-001",
+  "case_id": "synthetic-r2c-b-case-001",
+  "environment": "sandbox",
+  "gateway_request_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+  "gateway_request_id": "r2c-b-gateway-request-001",
+  "input_artifact_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+  "input_artifact_id": "synthetic-artifact-r2c-b-001",
+  "model_id": "provider-model-sandbox-v1",
+  "prompt_id": "institutional-research-brief",
+  "prompt_spec_hash": "3333333333333333333333333333333333333333333333333333333333333333",
+  "prompt_version": "1.0.0",
+  "provider_id": "provider-sandbox",
+  "purpose": "single_case_research",
+  "request_time": "2026-07-04T00:10:00Z",
+  "requested_budget": {
+    "max_calls": 1,
+    "max_cost_usd": "2.00",
+    "max_input_tokens": 1024,
+    "max_output_tokens": 512,
+    "max_total_tokens": 1536
+  },
+  "requested_capabilities": {
+    "network_execution": false,
+    "streaming": false,
+    "tools": false,
+    "trading_actions": false
+  },
+  "requester_id": "synthetic-research-runner",
+  "snapshot_id": "synthetic-snapshot-r2c-b-001",
+  "task_type": "research_generation"
+}

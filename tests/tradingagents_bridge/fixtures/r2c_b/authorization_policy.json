@@ -1,0 +1,30 @@
+{
+  "allow_network_execution": false,
+  "allow_tools": false,
+  "allow_trading_actions": false,
+  "allow_streaming": false,
+  "allowed_environment": "sandbox",
+  "allowed_purposes": [
+    "single_case_research"
+  ],
+  "allowed_task_types": [
+    "research_generation"
+  ],
+  "authorization_policy_version": "1.0",
+  "grant_mode": "offline_preflight",
+  "max_calls": 1,
+  "max_cost_usd": "1.00",
+  "max_grant_lifetime_seconds": 900,
+  "max_input_tokens": 4096,
+  "max_output_tokens": 1024,
+  "max_total_tokens": 5120,
+  "policy_id": "r2c-b-sandbox-single-case",
+  "policy_version": "1.0",
+  "requester_may_approve": false,
+  "required_approval_quorum": 2,
+  "required_approval_roles": [
+    "research_owner",
+    "risk_reviewer"
+  ],
+  "status": "approved"
+}

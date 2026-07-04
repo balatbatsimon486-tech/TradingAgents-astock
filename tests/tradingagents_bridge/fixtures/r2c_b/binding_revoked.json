@@ -1,0 +1,35 @@
+{
+  "binding_registry_version": "1.0",
+  "bindings": [
+    {
+      "adapter_id": "chat-provider-adapter",
+      "adapter_version": "1.0",
+      "allowed_purposes": [
+        "single_case_research"
+      ],
+      "allowed_task_types": [
+        "research_generation"
+      ],
+      "binding_id": "provider-sandbox-binding-001",
+      "binding_version": "1.0",
+      "environment": "sandbox",
+      "material_present": false,
+      "max_calls_per_grant": 1,
+      "metadata": {
+        "owner": "datang",
+        "production": false,
+        "research_only": true
+      },
+      "model_ids": [
+        "provider-model-sandbox-v1"
+      ],
+      "provider_id": "provider-sandbox",
+      "resolution_mode": "unavailable",
+      "secret_kind": "provider_api_key",
+      "state": "revoked",
+      "valid_from": "2026-07-01T00:00:00Z",
+      "valid_until": "2026-12-31T23:59:59Z"
+    }
+  ],
+  "registry_id": "datang-provider-bindings"
+}

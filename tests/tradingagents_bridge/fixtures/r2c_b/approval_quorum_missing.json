@@ -1,0 +1,16 @@
+{
+  "approvals": [
+    {
+      "approval_id": "approval-owner-001",
+      "approver_id": "synthetic-research-owner",
+      "approver_role": "research_owner",
+      "authorization_request_id": "auth-request-001",
+      "decision": "approve",
+      "decision_time": "2026-07-04T00:04:00Z",
+      "reason_code": "sandbox_preflight_reviewed",
+      "revoked": false,
+      "valid_until": "2026-07-04T00:20:00Z"
+    }
+  ],
+  "approval_set_version": "1.0"
+}
