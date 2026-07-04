@@ -1,0 +1,35 @@
+{
+  "prompts": [
+    {
+      "gateway_policy": {
+        "max_output_tokens": 512,
+        "model_id": "fake-deterministic-v1",
+        "model_version": "1.0",
+        "provider_id": "fake",
+        "seed": 0,
+        "temperature": 0
+      },
+      "metadata": {
+        "description": "Synthetic offline research prompt",
+        "owner": "datang",
+        "research_only": true
+      },
+      "optional_variables": [],
+      "output_schema_id": "institutional-research-output",
+      "output_schema_version": "1.0",
+      "prompt_id": "institutional-research-brief",
+      "prompt_version": "1.0.0",
+      "required_variables": [
+        "case_id",
+        "snapshot_id",
+        "research_context_json"
+      ],
+      "status": "approved",
+      "system_template": "templates/system.txt",
+      "task_type": "research_generation",
+      "user_template": "templates/user.txt"
+    }
+  ],
+  "registry_id": "datang-tradingagents-prompts",
+  "registry_version": "1.0"
+}

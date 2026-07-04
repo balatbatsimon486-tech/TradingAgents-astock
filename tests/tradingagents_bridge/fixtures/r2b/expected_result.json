@@ -1,0 +1,87 @@
+{
+  "case_id": "r2b-valid-001",
+  "errors": [],
+  "evidence_metrics": {
+    "cited_claims": 5,
+    "coverage_ratio": 1.0,
+    "total_claims": 5
+  },
+  "external_calls": {
+    "broker_called": false,
+    "market_data_called": false,
+    "network_called": false,
+    "qlib_called": false,
+    "tushare_called": false
+  },
+  "gateway_normalized_response_hash": "e157bf0aeebd0f7d8af6c3b9ed40f5d4bb26f847e59ee2f5db11efbf50099506",
+  "gateway_request_hash": "044f5bc22dcefad1077244da3848c140250f1b9fa9841ecad45313b97d9d138f",
+  "gateway_response_hash": "e157bf0aeebd0f7d8af6c3b9ed40f5d4bb26f847e59ee2f5db11efbf50099506",
+  "input_artifact_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "input_artifact_id": "synthetic-artifact-r2b-001",
+  "output_schema_id": "institutional-research-output",
+  "output_schema_version": "1.0",
+  "passed": true,
+  "prompt_id": "institutional-research-brief",
+  "prompt_spec_hash": "4f0a6ff7c1224813e9bd658900a538dc3f78a8fc827c327072d51c884de96664",
+  "prompt_version": "1.0.0",
+  "registry_version": "1.0",
+  "rendered_prompt_hash": "f21b42e611945cb71a60a0c00d7d0105c6776b52cd1348ca30d5aabab8016f9f",
+  "research_output": {
+    "bear_case": [
+      {
+        "claim": "Synthetic bear case hash=2dcefad1",
+        "evidence_refs": [
+          "evidence-002"
+        ]
+      }
+    ],
+    "bull_case": [
+      {
+        "claim": "Synthetic bull case hash=044f5bc2",
+        "evidence_refs": [
+          "evidence-001"
+        ]
+      }
+    ],
+    "confidence": "low",
+    "facts": [
+      {
+        "claim": "Evidence evidence-001 was considered as synthetic research data.",
+        "evidence_refs": [
+          "evidence-001"
+        ]
+      },
+      {
+        "claim": "Evidence evidence-002 was considered as synthetic research data.",
+        "evidence_refs": [
+          "evidence-002"
+        ]
+      }
+    ],
+    "key_risks": [
+      {
+        "claim": "Synthetic R2A contract risk only.",
+        "evidence_refs": [
+          "evidence-002"
+        ]
+      }
+    ],
+    "no_trading_decision": true,
+    "not_a_trading_signal": true,
+    "output_schema_id": "institutional-research-output",
+    "output_schema_version": "1.0",
+    "research_only": true,
+    "research_stance": "neutral",
+    "summary": "Deterministic fake research summary for r2b-valid-001 (044f5bc22dce).",
+    "uncertainties": [
+      "Synthetic R2A uncertainty only."
+    ]
+  },
+  "research_output_hash": "6cbc4097d4066cef51002f99a3781c57efe228207e377c5f96ed906fbcb01710",
+  "result_hash": "f029b9dac3b211ee69c31575d04a3f25c25fbcacfa9cc1fb35dc424218ded7a8",
+  "snapshot_id": "synthetic-snapshot-r2b-001",
+  "stage": "tradingagents_r2b_offline_prompt_research",
+  "system_prompt_hash": "e00b4c4d8160cceede519a8d03f3ece48a01996a6653a66bfdaa3949e89ab219",
+  "user_prompt_hash": "7d3d7d287001ad4a9d39f55c888e02bdf1486ca84e144dbbc676b495957ce3b5",
+  "variables_hash": "42eb661edc0af3bf016532a33c687be9c97ef9a13d43e26241b6b5ea3c6cfcc4"
+}
