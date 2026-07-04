@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any, Callable, Mapping
 
@@ -48,6 +49,7 @@ KNOWN_ERROR_CODES = frozenset(
 )
 
 PipelineRunner = Callable[..., dict[str, Any]]
+SAFE_CASE_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]*$")
 
 
 class BenchmarkManifestError(ValueError):
@@ -81,11 +83,30 @@ def _require_non_empty_string(payload: Mapping[str, Any], field: str, code: str)
     return value.strip()
 
 
+def _validate_case_id(value: Any) -> str:
+    if not isinstance(value, str):
+        raise BenchmarkManifestError("invalid_case_id", "case_id must be a string")
+    if value != value.strip() or not value:
+        raise BenchmarkManifestError("invalid_case_id", "case_id must not be blank or padded")
+    if not SAFE_CASE_ID_RE.fullmatch(value) or value in {".", ".."}:
+        raise BenchmarkManifestError("invalid_case_id", "case_id must be a safe filename component")
+    return value
+
+
+def _validate_fixture_file(path: Path) -> None:
+    if not path.exists():
+        raise BenchmarkManifestError("missing_fixture_file", "case fixture file does not exist")
+    if not path.is_file():
+        raise BenchmarkManifestError("fixture_path_not_file", "case fixture must be a regular file")
+    if path.suffix.lower() != ".json":
+        raise BenchmarkManifestError("invalid_fixture_extension", "case fixture extension must be .json")
+
+
 def _validate_case(case: Any, *, fixtures_root: Path, seen: set[str]) -> dict[str, Any]:
     if not isinstance(case, Mapping):
         raise BenchmarkManifestError("invalid_case", "benchmark cases must be objects")
 
-    case_id = _require_non_empty_string(case, "case_id", "missing_case_id")
+    case_id = _validate_case_id(case.get("case_id"))
     if case_id in seen:
         raise BenchmarkManifestError("duplicate_case_id", f"duplicate case_id: {case_id}")
     seen.add(case_id)
@@ -96,6 +117,7 @@ def _validate_case(case: Any, *, fixtures_root: Path, seen: set[str]) -> dict[st
         fixture_path.relative_to(fixtures_root.resolve(strict=False))
     except ValueError as exc:
         raise BenchmarkManifestError("unsafe_fixture_path", "case fixture resolves outside fixtures_root") from exc
+    _validate_fixture_file(fixture_path)
 
     category = _require_non_empty_string(case, "category", "missing_category")
     if category not in ALLOWED_CATEGORIES:
@@ -268,6 +290,10 @@ def _run_case(
 
     for run_index in range(1, repeat + 1):
         run_root = output_root / str(case["case_id"]) / f"run-{run_index}"
+        try:
+            run_root.resolve(strict=False).relative_to(output_root.resolve(strict=False))
+        except ValueError:
+            return _execution_error_case(case, fixture_hash, "unsafe_output_path")
         run_root.mkdir(parents=True, exist_ok=True)
         try:
             summary = pipeline_runner(

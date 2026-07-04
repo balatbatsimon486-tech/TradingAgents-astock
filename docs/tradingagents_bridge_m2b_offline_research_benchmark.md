@@ -80,9 +80,10 @@ Each case declares:
 - `tags`
 
 The runner fails closed when the benchmark version is unsupported, the repeat
-count is outside `1..5`, case ids are duplicated, fixture paths are absolute or
-contain `..`, categories are unknown, expected statuses are unknown, or required
-checks are not part of M2A `CRITICAL_CHECKS`.
+count is outside `1..5`, case ids are duplicated or unsafe as filename
+components, fixture paths are absolute or contain `..`, fixture files are
+missing, directories, or non-JSON files, categories are unknown, expected
+statuses are unknown, or required checks are not part of M2A `CRITICAL_CHECKS`.
 
 ## Case Schema
 
@@ -225,6 +226,9 @@ Each run uses an isolated output directory:
 
 M2A writes its own per-case artifacts under that run directory. A rejected case
 still gets its run directory so the batch is auditable.
+
+Case ids are validated before output paths are created. The resolved run
+directory must remain under the resolved benchmark output root.
 
 ## External-Call Isolation
 

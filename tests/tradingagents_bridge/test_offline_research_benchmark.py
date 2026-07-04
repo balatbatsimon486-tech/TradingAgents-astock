@@ -106,6 +106,54 @@ def test_manifest_loader_accepts_fixed_manifest_and_rejects_unsafe_variants(tmp_
         assert exc.value.code == code
 
 
+def test_manifest_loader_rejects_unsafe_case_ids_and_fixture_file_problems(tmp_path: Path) -> None:
+    fixtures_root = _copy_fixture_tree(tmp_path)
+    manifest_path = fixtures_root / "benchmark_manifest.json"
+    unsafe_case_ids = [
+        "../outside",
+        "..\\outside",
+        "C:\\outside",
+        "/outside",
+        "case/subdir",
+        "case\\subdir",
+        ".",
+        "..",
+        "",
+        " padded ",
+        "bad\nid",
+    ]
+    for index, case_id in enumerate(unsafe_case_ids):
+        manifest = _load_json(manifest_path)
+        manifest["cases"] = [manifest["cases"][0]]
+        manifest["cases"][0]["case_id"] = case_id
+        path = tmp_path / f"unsafe_case_id_{index}.json"
+        _write_json(path, manifest)
+
+        with pytest.raises(BenchmarkManifestError) as exc:
+            load_benchmark_manifest(path, fixtures_root=fixtures_root)
+        assert exc.value.code == "invalid_case_id"
+
+    non_json = fixtures_root / "cases" / "not_json.txt"
+    non_json.write_text("{}", encoding="utf-8")
+    directory_fixture = fixtures_root / "cases" / "directory_fixture.json"
+    directory_fixture.mkdir()
+    invalid_fixtures = [
+        ("cases/missing.json", "missing_fixture_file"),
+        ("cases/directory_fixture.json", "fixture_path_not_file"),
+        ("cases/not_json.txt", "invalid_fixture_extension"),
+    ]
+    for fixture, code in invalid_fixtures:
+        manifest = _load_json(manifest_path)
+        manifest["cases"] = [manifest["cases"][0]]
+        manifest["cases"][0]["fixture"] = fixture
+        path = tmp_path / f"{code}.json"
+        _write_json(path, manifest)
+
+        with pytest.raises(BenchmarkManifestError) as exc:
+            load_benchmark_manifest(path, fixtures_root=fixtures_root)
+        assert exc.value.code == code
+
+
 def test_benchmark_executes_all_cases_with_stable_order_and_isolated_outputs(tmp_path: Path) -> None:
     result = _run(tmp_path)
     replayed = _run(tmp_path / "replayed")
@@ -129,10 +177,74 @@ def test_benchmark_executes_all_cases_with_stable_order_and_isolated_outputs(tmp
     assert all(value is False for value in result["external_calls"].values())
 
     benchmark_root = tmp_path / "outputs" / "tradingagents-m2b-offline-benchmark"
+    resolved_benchmark_root = benchmark_root.resolve(strict=False)
     for case in result["case_results"]:
-        assert (benchmark_root / case["case_id"] / "run-1").is_dir()
-        assert (benchmark_root / case["case_id"] / "run-2").is_dir()
+        for run_name in ("run-1", "run-2"):
+            run_dir = (benchmark_root / case["case_id"] / run_name).resolve(strict=False)
+            run_dir.relative_to(resolved_benchmark_root)
+            assert run_dir.is_dir()
         assert not str(case["fixture"]).startswith(str(PROJECT_ROOT))
+
+
+def test_valid_case_artifacts_preserve_research_semantics_without_formal_signals(tmp_path: Path) -> None:
+    _run(tmp_path)
+    benchmark_root = tmp_path / "outputs" / "tradingagents-m2b-offline-benchmark"
+
+    conflicting_md = (
+        benchmark_root
+        / "valid-conflicting-evidence-001"
+        / "run-1"
+        / "valid-conflicting-evidence-001"
+        / "artifacts"
+        / "000001.SZ_2026-06-30_research.md"
+    ).read_text(encoding="utf-8")
+    assert "Synthetic positive evidence is present" in conflicting_md
+    assert "Synthetic negative evidence is also present" in conflicting_md
+    assert "Synthetic downside risk is preserved" in conflicting_md
+
+    insufficient_md = (
+        benchmark_root
+        / "valid-insufficient-evidence-001"
+        / "run-1"
+        / "valid-insufficient-evidence-001"
+        / "artifacts"
+        / "000001.SZ_2026-06-30_research.md"
+    ).read_text(encoding="utf-8")
+    assert "Only limited synthetic evidence is available" in insufficient_md
+    assert "Evidence is insufficient for any actionable research signal" in insufficient_md
+
+    timezone_md = (
+        benchmark_root
+        / "valid-timezone-offset-001"
+        / "run-1"
+        / "valid-timezone-offset-001"
+        / "artifacts"
+        / "000001.SZ_2026-06-30_research.md"
+    ).read_text(encoding="utf-8")
+    assert "as_of_time=2026-06-30T17:00:00+08:00" in timezone_md
+
+    for case_id in (
+        "valid-complete-001",
+        "valid-conflicting-evidence-001",
+        "valid-insufficient-evidence-001",
+        "valid-timezone-offset-001",
+    ):
+        report = _load_json(
+            benchmark_root
+            / case_id
+            / "run-1"
+            / case_id
+            / "artifacts"
+            / "000001.SZ_2026-06-30_research.json"
+        )
+        assert report["final_signal"] in {
+            "research_buy",
+            "research_hold",
+            "research_sell",
+            "no_actionable_signal",
+        }
+        assert report["final_signal"] not in {"BUY", "HOLD", "SELL"}
+        assert "not_validated_trade_signal" in report["risk_flags"]
 
 
 def test_expected_rejections_count_as_benchmark_case_passed(tmp_path: Path) -> None:
@@ -421,3 +533,54 @@ def test_cli_smoke_outputs_summary_and_uses_explicit_paths_only(tmp_path: Path) 
     assert smoke_root.exists()
     assert not (PROJECT_ROOT / "reports" / "tradingagents_astock" / "offline_benchmark").exists()
     assert "OPENAI_API_KEY" not in completed.stdout
+
+
+def test_cli_exit_codes_for_mismatch_and_manifest_errors(tmp_path: Path) -> None:
+    clean = _run(tmp_path / "baseline")
+    baseline = build_expected_baseline(clean)
+    baseline["cases"][0]["actual_pipeline_status"] = "rejected"
+    mismatch_baseline = tmp_path / "mismatch_baseline.json"
+    _write_json(mismatch_baseline, baseline)
+    mismatch = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT_PATH),
+            "--manifest",
+            str(MANIFEST_PATH),
+            "--fixtures-root",
+            str(FIXTURES_ROOT),
+            "--output-root",
+            str(tmp_path / "mismatch"),
+            "--baseline",
+            str(mismatch_baseline),
+        ],
+        cwd=PROJECT_ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert mismatch.returncode == 1
+    assert json.loads(mismatch.stdout)["passed"] is False
+
+    bad_manifest = _load_json(MANIFEST_PATH)
+    bad_manifest["benchmark_version"] = "9.9"
+    bad_manifest_path = tmp_path / "bad_manifest.json"
+    _write_json(bad_manifest_path, bad_manifest)
+    manifest_error = subprocess.run(
+        [
+            sys.executable,
+            str(SCRIPT_PATH),
+            "--manifest",
+            str(bad_manifest_path),
+            "--fixtures-root",
+            str(FIXTURES_ROOT),
+            "--output-root",
+            str(tmp_path / "manifest_error"),
+        ],
+        cwd=PROJECT_ROOT,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert manifest_error.returncode == 2
+    assert json.loads(manifest_error.stdout)["errors"][0]["code"] == "unsupported_benchmark_version"
