@@ -1,0 +1,36 @@
+{
+  "case_id": "r2c-valid-001",
+  "gateway_contract_version": "1.0",
+  "input_artifact_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "input_artifact_id": "artifact-r2c-valid-001",
+  "input_payload": {
+    "evidence_refs": [
+      "synthetic://r2c/evidence/1"
+    ],
+    "research_context": "Synthetic R2C provider adapter contract fixture only.",
+    "research_only": true,
+    "system_prompt": "You are a deterministic offline research adapter fixture.",
+    "user_prompt": "Summarize synthetic evidence only. Do not produce trading instructions."
+  },
+  "model_id": "provider-model-sandbox-v1",
+  "model_version": "1.0",
+  "parameters": {
+    "max_output_tokens": 512,
+    "seed": 0,
+    "temperature": 0
+  },
+  "policy": {
+    "allow_market_data": false,
+    "allow_network": false,
+    "allow_tools": false,
+    "allow_trading_actions": false,
+    "research_only": true
+  },
+  "prompt_id": "r2c.synthetic.provider_adapter",
+  "prompt_version": "1.0",
+  "provider_id": "provider-sandbox",
+  "request_id": "r2c-request-001",
+  "request_schema_version": "1.0",
+  "snapshot_id": "synthetic-r2c-snapshot-001",
+  "task_type": "research_generation"
+}

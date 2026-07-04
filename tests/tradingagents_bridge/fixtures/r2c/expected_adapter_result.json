@@ -1,0 +1,82 @@
+{
+  "adapter_contract_version": "1.0",
+  "adapter_id": "chat-provider-adapter",
+  "adapter_version": "1.0",
+  "cost": {
+    "amount": "0.00032",
+    "currency": "USD"
+  },
+  "credential_value_resolved": false,
+  "errors": [],
+  "external_calls": {
+    "broker_called": false,
+    "market_data_called": false,
+    "network_called": false,
+    "qlib_called": false,
+    "tushare_called": false
+  },
+  "finish_reason": "stop",
+  "idempotency_key": "aa79593821165cdda43f6a2209f5a85aab076d905a6c6895a2b971fa077ee2cd",
+  "live_mode_enabled": false,
+  "model_id": "provider-model-sandbox-v1",
+  "model_version": "1.0",
+  "normalized_response_hash": "d2a0ce677311c9fac0c73a0ec99e9b650db16bd85cc46d1e96977f889c787a15",
+  "passed": true,
+  "provider_id": "provider-sandbox",
+  "provider_response": {
+    "content": {
+      "bear_case": [
+        "Synthetic adapter downside note."
+      ],
+      "bull_case": [
+        "Synthetic adapter upside note."
+      ],
+      "evidence_refs": [
+        "synthetic://r2c/evidence/1"
+      ],
+      "key_risks": [
+        "Synthetic adapter risk only."
+      ],
+      "no_trading_decision": true,
+      "not_a_trading_signal": true,
+      "research_only": true,
+      "summary": "Synthetic provider-shaped research output.",
+      "uncertainties": [
+        "Synthetic adapter uncertainty only."
+      ]
+    },
+    "finish_reason": "stop",
+    "model_id": "provider-model-sandbox-v1",
+    "model_version": "1.0",
+    "provider_id": "provider-sandbox",
+    "provider_metadata": {
+      "adapter_id": "chat-provider-adapter",
+      "adapter_version": "1.0",
+      "response_headers": {
+        "content-type": "application/json",
+        "x-request-id": "synthetic-wire-request-001"
+      },
+      "transport_kind": "fake",
+      "wire_response_id": "synthetic-provider-response-001"
+    },
+    "request_id": "r2c-request-001",
+    "response_schema_version": "1.0",
+    "usage": {
+      "input_tokens": 14,
+      "output_tokens": 18,
+      "total_tokens": 32
+    }
+  },
+  "request_hash": "027569329ae950fb92826d384a36765c68a5edf7c49fea0eab26806095ac3a6f",
+  "request_id": "r2c-request-001",
+  "retry_count": 0,
+  "stage": "tradingagents_r2c_offline_provider_adapter",
+  "transport_kind": "fake",
+  "usage": {
+    "input_tokens": 14,
+    "output_tokens": 18,
+    "total_tokens": 32
+  },
+  "wire_request_hash": "90412a0cc1d271b52d3b50b732fbbf64b162947ff0dd8dfd4afce45e97da025c",
+  "wire_response_hash": "65b6e87e79377f5d8a7a7044dbb76d5eb0d1d19592c60c3f52e47e4a8d24bd47"
+}

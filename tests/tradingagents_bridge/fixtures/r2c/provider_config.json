@@ -1,0 +1,28 @@
+{
+  "adapter_contract_version": "1.0",
+  "adapter_id": "chat-provider-adapter",
+  "adapter_version": "1.0",
+  "credential_binding_id": "provider-credential-slot-test",
+  "enabled": true,
+  "endpoint_policy": {
+    "allow_proxy": false,
+    "allow_redirects": false,
+    "host": "provider.invalid",
+    "path": "/v1/chat/completions",
+    "scheme": "https"
+  },
+  "limits": {
+    "max_attempts": 2,
+    "max_cost_usd": "1.00",
+    "max_input_tokens": 4096,
+    "max_output_tokens": 1024,
+    "max_response_bytes": 1048576,
+    "max_total_tokens": 5120,
+    "timeout_ms": 30000
+  },
+  "live_mode_enabled": false,
+  "model_id": "provider-model-sandbox-v1",
+  "model_version": "1.0",
+  "provider_id": "provider-sandbox",
+  "transport_kind": "fake"
+}
