@@ -1,0 +1,26 @@
+{
+  "content": {
+    "bear_case": [],
+    "bull_case": [],
+    "evidence_refs": [],
+    "key_risks": [],
+    "no_trading_decision": true,
+    "not_a_trading_signal": true,
+    "order_size": 100,
+    "research_only": true,
+    "summary": "Synthetic invalid response with a forbidden trading field.",
+    "uncertainties": []
+  },
+  "finish_reason": "stop",
+  "model_id": "fake-deterministic-v1",
+  "model_version": "1.0",
+  "provider_id": "fake",
+  "provider_metadata": {},
+  "request_id": "r2a-request-001",
+  "response_schema_version": "1.0",
+  "usage": {
+    "input_tokens": 1,
+    "output_tokens": 1,
+    "total_tokens": 2
+  }
+}

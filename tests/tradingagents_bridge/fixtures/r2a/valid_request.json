@@ -1,0 +1,34 @@
+{
+  "case_id": "r2a-valid-001",
+  "gateway_contract_version": "1.0",
+  "input_artifact_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "input_artifact_id": "artifact-r2a-valid-001",
+  "input_payload": {
+    "evidence_refs": [
+      "synthetic://r2a/evidence/1"
+    ],
+    "research_context": "Synthetic R2A contract fixture only.",
+    "research_only": true
+  },
+  "model_id": "fake-deterministic-v1",
+  "model_version": "1.0",
+  "parameters": {
+    "max_output_tokens": 512,
+    "seed": 0,
+    "temperature": 0
+  },
+  "policy": {
+    "allow_market_data": false,
+    "allow_network": false,
+    "allow_tools": false,
+    "allow_trading_actions": false,
+    "research_only": true
+  },
+  "prompt_id": "r2a.synthetic.research",
+  "prompt_version": "1.0",
+  "provider_id": "fake",
+  "request_id": "r2a-request-001",
+  "request_schema_version": "1.0",
+  "snapshot_id": "synthetic-r2a-snapshot-001",
+  "task_type": "research_generation"
+}

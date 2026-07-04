@@ -1,0 +1,37 @@
+{
+  "content": {
+    "bear_case": [
+      "Synthetic downside note derived from the fixed request hash."
+    ],
+    "bull_case": [
+      "Synthetic upside note derived from the fixed request hash."
+    ],
+    "evidence_refs": [
+      "synthetic://r2a/evidence/1"
+    ],
+    "key_risks": [
+      "Synthetic fixture risk only."
+    ],
+    "no_trading_decision": true,
+    "not_a_trading_signal": true,
+    "research_only": true,
+    "summary": "Deterministic fake research summary for R2A contract tests.",
+    "uncertainties": [
+      "Synthetic uncertainty only."
+    ]
+  },
+  "finish_reason": "stop",
+  "model_id": "fake-deterministic-v1",
+  "model_version": "1.0",
+  "provider_id": "fake",
+  "provider_metadata": {
+    "fake_provider": true
+  },
+  "request_id": "r2a-request-001",
+  "response_schema_version": "1.0",
+  "usage": {
+    "input_tokens": 12,
+    "output_tokens": 18,
+    "total_tokens": 30
+  }
+}
