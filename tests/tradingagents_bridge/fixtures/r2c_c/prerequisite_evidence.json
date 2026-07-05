@@ -1,0 +1,25 @@
+{
+  "evidence_bundle_version": "1.0",
+  "evidence_refs": [
+    {"artifact_ref":"tests/tradingagents_bridge/test_offline_llm_gateway.py","evidence_id":"r2a-evidence","hash":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","status":"passed"},
+    {"artifact_ref":"tests/tradingagents_bridge/test_offline_prompt_registry.py","evidence_id":"r2b-evidence","hash":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","status":"passed"},
+    {"artifact_ref":"tests/tradingagents_bridge/test_offline_provider_adapter.py","evidence_id":"r2c-a-evidence","hash":"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc","status":"passed"},
+    {"artifact_ref":"tests/tradingagents_bridge/test_offline_provider_authorization.py","evidence_id":"r2c-b-evidence","hash":"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd","status":"passed"},
+    {"artifact_ref":"scripts/audit_datang_extension_boundary.py","evidence_id":"boundary-audit-evidence","hash":"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee","status":"passed"},
+    {"artifact_ref":"R2C-B main CI run 28725496050","evidence_id":"main-ci-evidence","hash":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff","status":"passed"},
+    {"artifact_ref":"offline external call flags","evidence_id":"no-network-evidence","hash":"1111111111111111111111111111111111111111111111111111111111111111","status":"passed"},
+    {"artifact_ref":"secret scan and fixture review","evidence_id":"no-secret-evidence","hash":"2222222222222222222222222222222222222222222222222222222222222222","status":"passed"},
+    {"artifact_ref":"redaction tests","evidence_id":"redaction-evidence","hash":"3333333333333333333333333333333333333333333333333333333333333333","status":"passed"},
+    {"artifact_ref":"grant consumption tests","evidence_id":"replay-protection-evidence","hash":"4444444444444444444444444444444444444444444444444444444444444444","status":"passed"},
+    {"artifact_ref":"expected readiness package fixture","evidence_id":"readiness-package-evidence","hash":"5555555555555555555555555555555555555555555555555555555555555555","status":"passed"},
+    {"artifact_ref":"incident response fixture","evidence_id":"incident-response-evidence","hash":"6666666666666666666666666666666666666666666666666666666666666666","status":"passed"}
+  ],
+  "milestones": [
+    {"commit":"bd7279e127c815c43ac760c2aa86a5ccf50fb1f5","milestone":"R2A","status":"sealed"},
+    {"commit":"16da82868393b499b1c07ccce2fc0e13e4ac00d0","milestone":"R2B","status":"sealed"},
+    {"commit":"084ab293b5c190d4219ab72ac01eea3aa9fa90d5","milestone":"R2C-A","status":"sealed"},
+    {"commit":"65a396120a5734b7e06855000c84e7a2e581b617","milestone":"R2C-B","status":"sealed"}
+  ],
+  "project": "TradingAgents-astock",
+  "stable_baseline": "65a396120a5734b7e06855000c84e7a2e581b617"
+}

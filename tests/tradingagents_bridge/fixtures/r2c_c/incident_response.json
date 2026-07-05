@@ -1,0 +1,33 @@
+{
+  "audit_failure_plan": "Stop execution, preserve local evidence, and require manual audit path review before any retry.",
+  "automatic_enable_allowed": false,
+  "automatic_retry_after_incident": false,
+  "default_state": "blocked",
+  "fail_closed": true,
+  "incident_owner_role": "human-risk-owner",
+  "kill_switch_version": "1.0",
+  "live_execution_enabled": false,
+  "manual_enable_required": true,
+  "rollback_plan": "Revoke the proposed window, keep network execution disabled, and return to offline fixtures only.",
+  "secret_exposure_rotation_plan": "Immediately revoke the sandbox credential candidate, rotate externally, and invalidate any pending grant.",
+  "stop_conditions": [
+    "secret_value_in_log",
+    "binding_identity_mismatch",
+    "approval_or_grant_expired",
+    "provider_identity_drift",
+    "endpoint_not_allowlisted",
+    "redirect_proxy_or_private_network_requested",
+    "budget_exceeded",
+    "response_size_exceeded",
+    "token_limit_exceeded",
+    "tools_or_streaming_requested",
+    "trading_field_detected",
+    "provider_response_unparseable",
+    "auth_401_or_403",
+    "rate_limit_or_5xx_repeated",
+    "redaction_failed",
+    "audit_write_failed",
+    "kill_switch_state_unclear"
+  ],
+  "unauthorized_network_shutdown_plan": "Disable the sandbox window, preserve audit evidence, and require egress owner review."
+}

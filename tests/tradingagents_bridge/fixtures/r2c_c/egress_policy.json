@@ -1,0 +1,18 @@
+{
+  "allowed_hosts": ["provider.invalid"],
+  "allowed_ports": [443],
+  "allowed_scheme": "https",
+  "certificate_pinning_required": false,
+  "dns_rebinding_controls_required": true,
+  "egress_policy_version": "1.0",
+  "ip_literal_allowed": false,
+  "localhost_allowed": false,
+  "network_execution_enabled": false,
+  "policy_id": "sandbox-egress-review-001",
+  "private_network_allowed": false,
+  "proxy_allowed": false,
+  "redirects_allowed": false,
+  "status": "draft_for_review",
+  "tls_verification_required": true,
+  "wildcard_hosts_allowed": false
+}

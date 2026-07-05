@@ -1,0 +1,23 @@
+{
+  "adapter_id": "chat-provider-adapter",
+  "adapter_version": "1.0",
+  "allowed_purpose": "single_case_research",
+  "allowed_task_type": "research_generation",
+  "authorization_policy_id": "r2c-b-sandbox-single-case",
+  "binding_id": "provider-sandbox-binding-001",
+  "contract_version": "1.0",
+  "environment": "sandbox",
+  "fallback_enabled": false,
+  "max_calls": 1,
+  "model_id": "provider-model-sandbox-v1",
+  "production_data_allowed": false,
+  "profile_id": "provider-sandbox-readiness-001",
+  "profile_version": "1.0",
+  "provider_id": "provider-sandbox",
+  "sandbox_profile_contract_version": "1.0",
+  "single_case_only": true,
+  "status": "draft_for_review",
+  "streaming_enabled": false,
+  "tools_enabled": false,
+  "trading_actions_allowed": false
+}

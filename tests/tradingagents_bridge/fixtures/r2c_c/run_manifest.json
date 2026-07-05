@@ -1,0 +1,32 @@
+{
+  "case_id": "synthetic-r2c-c-case-001",
+  "fallback": false,
+  "manual_review_requirements": [
+    "human_review_completed",
+    "secret_backend_approved",
+    "resolver_design_reviewed",
+    "egress_allowlist_approved",
+    "kill_switch_drill_completed",
+    "incident_owner_confirmed",
+    "single_call_grant_issued_separately"
+  ],
+  "max_calls": 1,
+  "max_cost_usd": "0.10",
+  "max_input_tokens": 1024,
+  "max_output_tokens": 512,
+  "max_total_tokens": 1536,
+  "model_id": "provider-model-sandbox-v1",
+  "production_data": false,
+  "prompt_id": "institutional-research-brief",
+  "prompt_version": "1.0.0",
+  "proposed_window_end": "2026-07-06T00:15:00Z",
+  "proposed_window_start": "2026-07-06T00:00:00Z",
+  "provider_id": "provider-sandbox",
+  "run_manifest_id": "sandbox-run-manifest-001",
+  "run_manifest_version": "1.0",
+  "run_mode": "proposed_single_call",
+  "streaming": false,
+  "timeout_ms": 30000,
+  "tools": false,
+  "trading_actions": false
+}
