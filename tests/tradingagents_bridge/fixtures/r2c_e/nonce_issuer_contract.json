@@ -1,0 +1,19 @@
+{
+  "atomic_consume_required": true,
+  "authorization_id_as_nonce_forbidden": true,
+  "binding_required": true,
+  "configuration_status": "not_configured",
+  "contract_id": "nonce-issuer-contract-001",
+  "maximum_lifetime_seconds": 300,
+  "minimum_entropy_bits": 128,
+  "nonce_commitment_present": false,
+  "nonce_consumed": false,
+  "nonce_issued": false,
+  "nonce_issuer_contract_version": "1.0",
+  "nonce_kind": "single_use_cryptographic_challenge",
+  "nonce_value_present": false,
+  "replay_detection_required": true,
+  "revocation_required": true,
+  "single_use_required": true,
+  "storage_required": true
+}

@@ -1,0 +1,15 @@
+{
+  "authorization_draft_hash": "6cae5cbc989a4420ab6747403eb5c00818dd6d00e58d7a5129a7b149ae637b2b",
+  "authorization_issuer_contract_id": "authorization-issuer-contract-001",
+  "environment": "sandbox",
+  "identity_provider_contract_id": "identity-provider-contract-001",
+  "manifest_id": "r2c-e-trust-boundary-001",
+  "nonce_issuer_contract_id": "nonce-issuer-contract-001",
+  "real_service_connections_allowed": false,
+  "review_package_hash": "3260af7ca415a8420d6d398e67f42e951a6ab70384a782c7dbefbfb14c4156f2",
+  "signature_verifier_contract_id": "signature-verifier-contract-001",
+  "single_call_only": true,
+  "stable_baseline": "0000000000000000000000000000000000000000",
+  "status": "draft_for_integration_review",
+  "trust_provider_manifest_version": "1.0"
+}

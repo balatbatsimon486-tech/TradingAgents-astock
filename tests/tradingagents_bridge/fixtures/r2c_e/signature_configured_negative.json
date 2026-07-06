@@ -1,0 +1,19 @@
+{
+  "algorithm_policy": [
+    "policy_placeholder_asymmetric_signature"
+  ],
+  "certificate_chain_validation_required": true,
+  "configuration_status": "configured",
+  "contract_id": "signature-verifier-contract-001",
+  "key_usage_validation_required": true,
+  "payload_binding_required": true,
+  "payload_hash_algorithm": "sha256",
+  "revocation_check_required": true,
+  "signature_format": "detached",
+  "signature_value_present": false,
+  "signature_verifier_contract_version": "1.0",
+  "signer_identity_binding_required": true,
+  "trusted_root_policy_required": true,
+  "verification_performed": false,
+  "verification_succeeded": false
+}

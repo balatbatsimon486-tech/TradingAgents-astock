@@ -1,0 +1,30 @@
+{
+  "authorization_draft_hash": "6cae5cbc989a4420ab6747403eb5c00818dd6d00e58d7a5129a7b149ae637b2b",
+  "authorization_state": "review_ready",
+  "change_freeze_hash": "053ccbaf9c6f17e9fe9918cefd3cf455392f7c5466fbb577aec7083249ccefc5",
+  "consume_rejected_in_r2c_d": true,
+  "human_review_completed": false,
+  "identity_verification_performed": false,
+  "issuance_rejected_in_r2c_d": true,
+  "live_authorization_issued": false,
+  "no_network": true,
+  "no_secret": true,
+  "no_transport": true,
+  "nonce_issued": false,
+  "r2c_d_main_ci": {
+    "branch": "datang/main",
+    "commit": "45492693d586df1f1cb4ca715a608bbad0c754d1",
+    "job_id": "85291040151",
+    "result": "completed_success",
+    "run_id": "28766243525",
+    "workflow": "tests"
+  },
+  "required_integration_actions_marked_complete": false,
+  "review_package_hash": "3260af7ca415a8420d6d398e67f42e951a6ab70384a782c7dbefbfb14c4156f2",
+  "review_package_sealed": true,
+  "signature_verification_performed": false,
+  "source_stage": "R2C-D",
+  "stable_baseline": "45492693d586df1f1cb4ca715a608bbad0c754d1",
+  "supersede_detection_required": true,
+  "trust_boundary_evidence_version": "1.0"
+}

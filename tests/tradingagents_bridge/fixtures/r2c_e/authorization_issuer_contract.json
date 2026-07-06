@@ -1,0 +1,18 @@
+{
+  "atomic_issue_required": true,
+  "authorization_issued": false,
+  "authorization_issuer_contract_version": "1.0",
+  "authorization_ttl_seconds_max": 900,
+  "authorization_value_present": false,
+  "change_freeze_revalidation_required": true,
+  "configuration_status": "not_configured",
+  "contract_id": "authorization-issuer-contract-001",
+  "detached_signature_verification_required": true,
+  "duplicate_issue_rejected": true,
+  "execution_authorized": false,
+  "identity_verification_required": true,
+  "issuance_mode": "single_sandbox_call",
+  "manual_issue_required": true,
+  "nonce_issuance_required": true,
+  "stable_baseline_revalidation_required": true
+}

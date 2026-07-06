@@ -1,0 +1,22 @@
+{
+  "audience_binding_required": true,
+  "clock_skew_seconds_max": 60,
+  "configuration_status": "not_configured",
+  "contract_id": "identity-provider-contract-001",
+  "fail_closed_required": true,
+  "fresh_authentication_required": true,
+  "identity_assertion_present": true,
+  "identity_provider_contract_version": "1.0",
+  "identity_subject_kind": "opaque_subject_reference",
+  "issuer_allowlist_required": true,
+  "maximum_assertion_age_seconds": 300,
+  "multi_factor_authentication_required": true,
+  "nonce_binding_required": true,
+  "protocol_kind": "not_selected",
+  "provider_kind": "external_enterprise_identity_provider",
+  "requester_reviewer_separation_required": true,
+  "required_assurance_level": "high",
+  "subject_uniqueness_required": true,
+  "verification_performed": false,
+  "verification_succeeded": false
+}
