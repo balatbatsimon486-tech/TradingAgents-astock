@@ -1,0 +1,110 @@
+{
+  "assignments": [
+    {
+      "accountable_role": "security_owner",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "identity-provider-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "identity_service_owner"
+      ]
+    },
+    {
+      "accountable_role": "security_owner",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "signature-verifier-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "signature_service_owner"
+      ]
+    },
+    {
+      "accountable_role": "security_owner",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "nonce-issuer-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "nonce_service_owner"
+      ]
+    },
+    {
+      "accountable_role": "security_owner",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "authorization-issuer-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "authorization_service_owner"
+      ]
+    },
+    {
+      "accountable_role": "audit_owner",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "audit-sink-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "platform_owner"
+      ]
+    },
+    {
+      "accountable_role": "change_approver",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "change-control-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "platform_owner"
+      ]
+    },
+    {
+      "accountable_role": "incident_commander",
+      "consulted_roles": [
+        "platform_owner"
+      ],
+      "control_id": "rollback-policy",
+      "informed_roles": [
+        "research_owner"
+      ],
+      "responsible_roles": [
+        "rollback_operator"
+      ]
+    }
+  ],
+  "matrix_id": "r2c-f-ownership-001",
+  "ownership_matrix_version": "1.0",
+  "real_people_assigned": false,
+  "separation_of_duties": {
+    "change_approver_role": "change_approver",
+    "change_requester_role": "platform_owner",
+    "failed_service_owner_roles": [
+      "identity_service_owner",
+      "signature_service_owner",
+      "nonce_service_owner",
+      "authorization_service_owner"
+    ],
+    "incident_commander_role": "incident_commander",
+    "rollback_operator_role": "rollback_operator"
+  }
+}

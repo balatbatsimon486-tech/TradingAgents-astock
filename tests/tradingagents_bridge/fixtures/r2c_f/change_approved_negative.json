@@ -1,0 +1,81 @@
+{
+  "abort_conditions": [
+    "stable_baseline_drift",
+    "architecture_hash_mismatch",
+    "unexpected_network_request",
+    "secret_material_detected",
+    "manual_approval_skip_attempted"
+  ],
+  "change_control_version": "1.0",
+  "change_plan_id": "r2c-f-change-001",
+  "change_request_approved": true,
+  "implementation_authorized": false,
+  "implementation_steps": [
+    {
+      "owner_role": "platform_owner",
+      "rollback_reference": "rollback-disable-connections",
+      "step_id": "dry-run-review",
+      "success_condition": "dry-run checklist reviewed"
+    }
+  ],
+  "manual_approval_skip_allowed": false,
+  "network_change_authorized": false,
+  "post_change_checks": [
+    {
+      "check_id": "service-configured-remains-false",
+      "owner_role": "security_owner",
+      "success_condition": "all service configured flags remain false"
+    }
+  ],
+  "pre_change_checks": [
+    {
+      "check_id": "stable-baseline-confirmed",
+      "owner_role": "security_owner",
+      "success_condition": "stable-baseline-confirmed"
+    },
+    {
+      "check_id": "architecture-package-confirmed",
+      "owner_role": "security_owner",
+      "success_condition": "architecture-package-confirmed"
+    },
+    {
+      "check_id": "recommendation-not-superseded",
+      "owner_role": "security_owner",
+      "success_condition": "recommendation-not-superseded"
+    },
+    {
+      "check_id": "kill-switch-ready",
+      "owner_role": "security_owner",
+      "success_condition": "kill-switch-ready"
+    },
+    {
+      "check_id": "audit-sink-ready",
+      "owner_role": "security_owner",
+      "success_condition": "audit-sink-ready"
+    },
+    {
+      "check_id": "egress-disabled",
+      "owner_role": "security_owner",
+      "success_condition": "egress-disabled"
+    },
+    {
+      "check_id": "no-secret-present",
+      "owner_role": "security_owner",
+      "success_condition": "no-secret-present"
+    }
+  ],
+  "production_change_allowed": false,
+  "required_approver_roles": [
+    "security_owner",
+    "platform_owner",
+    "change_approver"
+  ],
+  "status": "draft_for_review",
+  "validation_steps": [
+    {
+      "owner_role": "audit_owner",
+      "step_id": "post-review-evidence",
+      "success_condition": "evidence package remains synthetic"
+    }
+  ]
+}

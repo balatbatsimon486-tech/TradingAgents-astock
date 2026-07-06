@@ -1,0 +1,247 @@
+{
+  "drill_plan_id": "r2c-f-drill-001",
+  "drill_plan_version": "1.0",
+  "drills": [
+    {
+      "drill_id": "drill-01-identity-provider-unavailable",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "identity_provider_unavailable",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "identity_provider_unavailable",
+      "scenario": "identity_provider_unavailable"
+    },
+    {
+      "drill_id": "drill-02-identity-assertion-stale",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "identity_assertion_stale",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "identity_assertion_stale",
+      "scenario": "identity_assertion_stale"
+    },
+    {
+      "drill_id": "drill-03-signature-verification-service-unavailable",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "signature_verification_service_unavailable",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "signature_verification_service_unavailable",
+      "scenario": "signature_verification_service_unavailable"
+    },
+    {
+      "drill_id": "drill-04-certificate-revocation-status-unknown",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "certificate_revocation_status_unknown",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "certificate_revocation_status_unknown",
+      "scenario": "certificate_revocation_status_unknown"
+    },
+    {
+      "drill_id": "drill-05-nonce-duplicate-issue",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "nonce_duplicate_issue",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "nonce_duplicate_issue",
+      "scenario": "nonce_duplicate_issue"
+    },
+    {
+      "drill_id": "drill-06-nonce-replay-attempt",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "nonce_replay_attempt",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "nonce_replay_attempt",
+      "scenario": "nonce_replay_attempt"
+    },
+    {
+      "drill_id": "drill-07-authorization-duplicate-issue",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "authorization_duplicate_issue",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "authorization_duplicate_issue",
+      "scenario": "authorization_duplicate_issue"
+    },
+    {
+      "drill_id": "drill-08-stable-baseline-drift",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "stable_baseline_drift",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "stable_baseline_drift",
+      "scenario": "stable_baseline_drift"
+    },
+    {
+      "drill_id": "drill-09-review-package-superseded",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "review_package_superseded",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "review_package_superseded",
+      "scenario": "review_package_superseded"
+    },
+    {
+      "drill_id": "drill-10-audit-sink-unavailable",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "audit_sink_unavailable",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "audit_sink_unavailable",
+      "scenario": "audit_sink_unavailable"
+    },
+    {
+      "drill_id": "drill-11-kill-switch-failure",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "kill_switch_failure",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "kill_switch_failure",
+      "scenario": "kill_switch_failure"
+    },
+    {
+      "drill_id": "drill-12-unexpected-provider-network-attempt",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "unexpected_provider_network_attempt",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "unexpected_provider_network_attempt",
+      "scenario": "unexpected_provider_network_attempt"
+    },
+    {
+      "drill_id": "drill-13-secret-exposure-suspicion",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "secret_exposure_suspicion",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "secret_exposure_suspicion",
+      "scenario": "secret_exposure_suspicion"
+    },
+    {
+      "drill_id": "drill-14-change-window-exceeded",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "change_window_exceeded",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "change_window_exceeded",
+      "scenario": "change_window_exceeded"
+    },
+    {
+      "drill_id": "drill-15-rollback-operator-unavailable",
+      "evidence_required": [
+        "audit_metadata",
+        "redacted_decision_record"
+      ],
+      "execution_state": "not_executed",
+      "expected_abort_condition": "rollback_operator_unavailable",
+      "expected_decision": "blocked",
+      "expected_detection": "structured_error_or_blocking_finding",
+      "expected_owner_role": "incident_commander",
+      "expected_rollback_path": "rollback-no-service-configured",
+      "initial_state": "offline_architecture_review",
+      "injected_failure": "rollback_operator_unavailable",
+      "scenario": "rollback_operator_unavailable"
+    }
+  ],
+  "ready_for_tabletop_review": true
+}

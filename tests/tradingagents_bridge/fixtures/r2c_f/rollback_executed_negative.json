@@ -1,0 +1,63 @@
+{
+  "automatic_rollback_execution_allowed": false,
+  "exit_strategy": {
+    "audit_preservation_required": true,
+    "authorization_revocation_required": true,
+    "configuration_revert_required": true,
+    "connections_disabled_required": true,
+    "credential_rotation_requirement": true,
+    "data_deletion_verification_required": true,
+    "dependency_removal_required": true,
+    "nonce_registry_isolation_required": true,
+    "restore_no_service_configured_state_required": true,
+    "synthetic_configuration_export_required": true,
+    "vendor_portability_requirements": true
+  },
+  "rollback_approved": false,
+  "rollback_plan_id": "r2c-f-rollback-001",
+  "rollback_plan_version": "1.0",
+  "rollback_ready_for_dry_run_review": true,
+  "rollback_steps": [
+    {
+      "owner_role": "rollback_operator",
+      "step_id": "rollback-disable-connections",
+      "success_condition": "all planned connections remain disabled"
+    },
+    {
+      "owner_role": "rollback_operator",
+      "step_id": "rollback-no-service-configured",
+      "success_condition": "all service configured flags remain false"
+    }
+  ],
+  "rollback_test_executed": true,
+  "status": "draft_for_review",
+  "triggers": [
+    "identity_policy_mismatch",
+    "signature_policy_mismatch",
+    "nonce_replay_control_failure",
+    "duplicate_authorization_issuance",
+    "audit_sink_unavailable",
+    "kill_switch_unavailable",
+    "unexpected_network_request",
+    "secret_exposure_suspicion",
+    "stable_baseline_drift",
+    "review_package_superseded",
+    "candidate_contract_mismatch",
+    "data_class_boundary_violation",
+    "latency_timeout_policy_violation",
+    "schema_drift",
+    "approval_chain_incomplete"
+  ],
+  "validation_steps": [
+    {
+      "owner_role": "audit_owner",
+      "step_id": "validate-audit-preserved",
+      "success_condition": "audit preservation confirmed"
+    },
+    {
+      "owner_role": "security_owner",
+      "step_id": "validate-no-service-configured",
+      "success_condition": "no-service-configured state restored"
+    }
+  ]
+}

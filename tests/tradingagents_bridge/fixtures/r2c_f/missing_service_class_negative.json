@@ -1,0 +1,248 @@
+{
+  "candidate_catalog_version": "1.0",
+  "candidates": [
+    {
+      "candidate_id": "identity-candidate-a",
+      "candidate_kind": "managed_external_service",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "9.0",
+        "change_management": "8.5",
+        "cost_governance": "8.0",
+        "data_governance": "9.0",
+        "integration_isolation": "9.5",
+        "operational_resilience": "9.0",
+        "portability_exit_strategy": "8.5",
+        "security_controls": "9.5"
+      },
+      "service_class": "identity_provider",
+      "status": "assessment_only"
+    },
+    {
+      "candidate_id": "identity-candidate-b",
+      "candidate_kind": "self_hosted_service_boundary",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "8.0",
+        "change_management": "8.0",
+        "cost_governance": "8.0",
+        "data_governance": "8.0",
+        "integration_isolation": "8.0",
+        "operational_resilience": "8.0",
+        "portability_exit_strategy": "8.0",
+        "security_controls": "8.0"
+      },
+      "service_class": "identity_provider",
+      "status": "assessment_only"
+    },
+    {
+      "candidate_id": "signature-candidate-a",
+      "candidate_kind": "managed_external_service",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "9.0",
+        "change_management": "8.5",
+        "cost_governance": "8.0",
+        "data_governance": "9.0",
+        "integration_isolation": "9.5",
+        "operational_resilience": "9.0",
+        "portability_exit_strategy": "8.5",
+        "security_controls": "9.5"
+      },
+      "service_class": "detached_signature_verifier",
+      "status": "assessment_only"
+    },
+    {
+      "candidate_id": "signature-candidate-b",
+      "candidate_kind": "self_hosted_service_boundary",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "8.0",
+        "change_management": "8.0",
+        "cost_governance": "8.0",
+        "data_governance": "8.0",
+        "integration_isolation": "8.0",
+        "operational_resilience": "8.0",
+        "portability_exit_strategy": "8.0",
+        "security_controls": "8.0"
+      },
+      "service_class": "detached_signature_verifier",
+      "status": "assessment_only"
+    },
+    {
+      "candidate_id": "issuer-candidate-a",
+      "candidate_kind": "managed_external_service",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "9.0",
+        "change_management": "8.5",
+        "cost_governance": "8.0",
+        "data_governance": "9.0",
+        "integration_isolation": "9.5",
+        "operational_resilience": "9.0",
+        "portability_exit_strategy": "8.5",
+        "security_controls": "9.5"
+      },
+      "service_class": "authorization_issuer",
+      "status": "assessment_only"
+    },
+    {
+      "candidate_id": "issuer-candidate-b",
+      "candidate_kind": "self_hosted_service_boundary",
+      "capability_claims_verified": false,
+      "commercial_terms_verified": false,
+      "deployment_support_verified": false,
+      "mandatory_control_responses": {
+        "audit_record_supported": true,
+        "bounded_ttl_supported": true,
+        "change_notification_supported": true,
+        "data_minimization_supported": true,
+        "exit_and_export_plan_supported": true,
+        "fail_closed_supported": true,
+        "least_privilege_supported": true,
+        "no_automatic_real_execution_approval": true,
+        "no_trading_system_direct_connection": true,
+        "no_wildcard_permissions": true,
+        "revocation_supported": true,
+        "sandbox_isolation_supported": true,
+        "shared_secret_not_sole_authenticator": true,
+        "subject_binding_supported": true,
+        "version_pinning_supported": true
+      },
+      "notes": [
+        "synthetic assessment fixture",
+        "not a procurement decision"
+      ],
+      "scored_attributes": {
+        "auditability": "8.0",
+        "change_management": "8.0",
+        "cost_governance": "8.0",
+        "data_governance": "8.0",
+        "integration_isolation": "8.0",
+        "operational_resilience": "8.0",
+        "portability_exit_strategy": "8.0",
+        "security_controls": "8.0"
+      },
+      "service_class": "authorization_issuer",
+      "status": "assessment_only"
+    }
+  ],
+  "catalog_id": "r2c-f-candidate-catalog-001",
+  "real_vendor_research_completed": false,
+  "synthetic_only": true
+}

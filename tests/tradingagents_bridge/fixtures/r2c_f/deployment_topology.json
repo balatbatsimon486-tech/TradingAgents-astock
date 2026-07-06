@@ -1,0 +1,360 @@
+{
+  "data_class_policies": [
+    {
+      "data_class": "public_metadata",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    },
+    {
+      "data_class": "internal_configuration",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    },
+    {
+      "data_class": "restricted_identity_metadata",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    },
+    {
+      "data_class": "restricted_authorization_metadata",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    },
+    {
+      "data_class": "secret_material",
+      "real_material_present": false,
+      "retention_class": "not_allowed"
+    },
+    {
+      "data_class": "signature_material",
+      "real_material_present": false,
+      "retention_class": "not_allowed"
+    },
+    {
+      "data_class": "nonce_material",
+      "real_material_present": false,
+      "retention_class": "not_allowed"
+    },
+    {
+      "data_class": "research_artifact",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    },
+    {
+      "data_class": "audit_metadata",
+      "real_material_present": false,
+      "retention_class": "redacted_metadata_only"
+    }
+  ],
+  "data_flows": [
+    {
+      "data_classes": [
+        "internal_configuration"
+      ],
+      "declared": true,
+      "destination_node_id": "trust-control-plane",
+      "flow_id": "research-flow-to-control",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "research-orchestration-boundary"
+    },
+    {
+      "data_classes": [
+        "restricted_identity_metadata"
+      ],
+      "declared": true,
+      "destination_node_id": "identity-service-boundary",
+      "flow_id": "control-flow-to-identity",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    },
+    {
+      "data_classes": [
+        "audit_metadata"
+      ],
+      "declared": true,
+      "destination_node_id": "signature-verification-boundary",
+      "flow_id": "control-flow-to-signature",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    },
+    {
+      "data_classes": [
+        "restricted_authorization_metadata"
+      ],
+      "declared": true,
+      "destination_node_id": "nonce-service-boundary",
+      "flow_id": "control-flow-to-nonce",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    },
+    {
+      "data_classes": [
+        "restricted_authorization_metadata"
+      ],
+      "declared": true,
+      "destination_node_id": "authorization-issuer-boundary",
+      "flow_id": "control-flow-to-issuer",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    },
+    {
+      "data_classes": [
+        "audit_metadata"
+      ],
+      "declared": true,
+      "destination_node_id": "immutable-audit-sink-boundary",
+      "flow_id": "control-flow-to-audit",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    },
+    {
+      "data_classes": [
+        "internal_configuration"
+      ],
+      "declared": true,
+      "destination_node_id": "trust-control-plane",
+      "flow_id": "kill-switch-flow-to-control",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "kill-switch-control-boundary"
+    },
+    {
+      "data_classes": [
+        "research_artifact"
+      ],
+      "declared": true,
+      "destination_node_id": "provider-sandbox-boundary",
+      "flow_id": "control-flow-to-provider-sandbox",
+      "purpose": "offline_architecture_review",
+      "retention_class": "redacted_metadata_only",
+      "source_node_id": "trust-control-plane"
+    }
+  ],
+  "deployment_approved": false,
+  "deployment_topology_version": "1.0",
+  "edges": [
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "internal_configuration"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "research-to-control",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "research-orchestration-boundary",
+      "target_node_id": "trust-control-plane"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "restricted_identity_metadata"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-identity",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "identity-service-boundary"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "audit_metadata"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-signature",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "signature-verification-boundary"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "restricted_authorization_metadata"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-nonce",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "nonce-service-boundary"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "restricted_authorization_metadata"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-issuer",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "authorization-issuer-boundary"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "audit_metadata"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-audit",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "immutable-audit-sink-boundary"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "internal_configuration"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "kill-switch-to-control",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "kill-switch-control-boundary",
+      "target_node_id": "trust-control-plane"
+    },
+    {
+      "audited_path_required": true,
+      "connection_state": "disabled",
+      "data_classes": [
+        "research_artifact"
+      ],
+      "direction": "outbound_request_response",
+      "edge_id": "control-to-provider-sandbox",
+      "protocol_policy": "https_required_future",
+      "public_callback_allowed": false,
+      "source_node_id": "trust-control-plane",
+      "target_node_id": "provider-sandbox-boundary"
+    }
+  ],
+  "environment": "sandbox",
+  "network_configuration_applied": false,
+  "nodes": [
+    {
+      "deployment_state": "planned",
+      "node_id": "research-orchestration-boundary",
+      "node_kind": "logical_research_boundary",
+      "trust_zone": "research_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "trust-control-plane",
+      "node_kind": "logical_control_plane",
+      "trust_zone": "restricted_control_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "identity-service-boundary",
+      "node_kind": "future_identity_boundary",
+      "trust_zone": "identity_boundary_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "signature-verification-boundary",
+      "node_kind": "future_signature_boundary",
+      "trust_zone": "signature_boundary_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "nonce-service-boundary",
+      "node_kind": "future_nonce_boundary",
+      "trust_zone": "nonce_boundary_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "authorization-issuer-boundary",
+      "node_kind": "future_authorization_boundary",
+      "trust_zone": "authorization_boundary_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "immutable-audit-sink-boundary",
+      "node_kind": "future_audit_boundary",
+      "trust_zone": "audit_boundary_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "kill-switch-control-boundary",
+      "node_kind": "logical_kill_switch_boundary",
+      "trust_zone": "restricted_control_zone"
+    },
+    {
+      "deployment_state": "planned",
+      "node_id": "provider-sandbox-boundary",
+      "node_kind": "provider_sandbox_boundary",
+      "trust_zone": "provider_sandbox_zone"
+    }
+  ],
+  "real_endpoints_present": false,
+  "status": "draft_for_architecture_review",
+  "topology_id": "r2c-f-topology-001",
+  "trust_zones": [
+    {
+      "data_classes_allowed": [
+        "public_metadata",
+        "research_artifact"
+      ],
+      "trust_zone": "research_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "internal_configuration",
+        "audit_metadata"
+      ],
+      "trust_zone": "restricted_control_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "restricted_identity_metadata"
+      ],
+      "trust_zone": "identity_boundary_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "audit_metadata"
+      ],
+      "trust_zone": "signature_boundary_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "restricted_authorization_metadata"
+      ],
+      "trust_zone": "nonce_boundary_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "restricted_authorization_metadata"
+      ],
+      "trust_zone": "authorization_boundary_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "audit_metadata"
+      ],
+      "trust_zone": "audit_boundary_zone"
+    },
+    {
+      "data_classes_allowed": [
+        "research_artifact"
+      ],
+      "trust_zone": "provider_sandbox_zone"
+    }
+  ]
+}

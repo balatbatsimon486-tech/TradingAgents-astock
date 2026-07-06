@@ -1,0 +1,35 @@
+{
+  "evaluation_policy_version": "1.0",
+  "mandatory_controls": [
+    "sandbox_isolation_supported",
+    "least_privilege_supported",
+    "audit_record_supported",
+    "subject_binding_supported",
+    "revocation_supported",
+    "fail_closed_supported",
+    "data_minimization_supported",
+    "no_trading_system_direct_connection",
+    "shared_secret_not_sole_authenticator",
+    "version_pinning_supported",
+    "exit_and_export_plan_supported",
+    "change_notification_supported",
+    "no_wildcard_permissions",
+    "bounded_ttl_supported",
+    "no_automatic_real_execution_approval"
+  ],
+  "policy_id": "r2c-f-evaluation-policy-001",
+  "recommendation_is_procurement_decision": false,
+  "recommendation_threshold": "85.00",
+  "score_max": "10",
+  "score_min": "0",
+  "scoring_weights": {
+    "auditability": 15,
+    "change_management": 5,
+    "cost_governance": 5,
+    "data_governance": 10,
+    "integration_isolation": 10,
+    "operational_resilience": 15,
+    "portability_exit_strategy": 10,
+    "security_controls": 30
+  }
+}
