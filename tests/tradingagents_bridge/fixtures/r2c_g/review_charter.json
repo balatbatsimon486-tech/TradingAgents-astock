@@ -1,0 +1,30 @@
+{
+  "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+  "real_reviewers_assigned": false,
+  "real_signatures_present": false,
+  "real_signatures_required": true,
+  "requester_may_review": false,
+  "requester_role": "research_owner",
+  "required_reviewer_roles": [
+    "security_architecture_reviewer",
+    "platform_architecture_reviewer",
+    "operations_reviewer",
+    "data_governance_reviewer",
+    "incident_response_reviewer"
+  ],
+  "required_role_quorum": 5,
+  "review_charter_id": "r2c-g-review-charter-001",
+  "review_charter_version": "1.0",
+  "review_scope": [
+    "candidate_assessment",
+    "topology",
+    "trust_zones",
+    "data_flows",
+    "ownership",
+    "change_control",
+    "rollback",
+    "operational_drills"
+  ],
+  "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+  "status": "draft_for_review"
+}

@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "blocks_real_integration": true,
+      "completion_state": "not_completed",
+      "evidence_required": [
+        "approved_dry_run_result"
+      ],
+      "finding_id": "finding-medium-001",
+      "owner_role": "platform_owner",
+      "remediation_id": "remediation-001",
+      "required_action_code": "add_real_dry_run_before_deployment"
+    }
+  ],
+  "remediation_plan_id": "r2c-g-remediation-001",
+  "remediation_plan_version": "1.0",
+  "status": "draft_for_review"
+}

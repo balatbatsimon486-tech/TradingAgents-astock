@@ -1,0 +1,23 @@
+{
+  "requests": [
+    {
+      "approval_required_roles": [
+        "security_owner",
+        "risk_owner"
+      ],
+      "approval_state": "not_approved",
+      "business_justification_code": "synthetic_tradeoff_review",
+      "compensating_controls": [
+        "real_security_owner_review_required"
+      ],
+      "finding_id": "finding-medium-002",
+      "real_approvers_assigned": false,
+      "request_id": "risk-request-001",
+      "requested_by_role": "platform_owner",
+      "requested_expiry": "2030-01-31T00:00:00Z",
+      "requested_scope": "offline_architecture_only",
+      "risk_acceptance_request_version": "1.0"
+    }
+  ],
+  "risk_acceptance_request_set_version": "1.0"
+}

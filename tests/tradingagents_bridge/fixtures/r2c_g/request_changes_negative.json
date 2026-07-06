@@ -1,0 +1,110 @@
+{
+  "records": [
+    {
+      "finding_ids": [
+        "finding-medium-001"
+      ],
+      "identity_verification_status": "not_available",
+      "recommendation": "request_changes",
+      "record_kind": "architecture_review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_charter_id": "r2c-g-review-charter-001",
+      "review_record_id": "synthetic-security-review-001",
+      "review_record_version": "1.0",
+      "reviewed_components": [
+        "trust_zones",
+        "data_flows",
+        "change_control"
+      ],
+      "reviewer_id": "synthetic-security-reviewer",
+      "reviewer_role": "security_architecture_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:30:00Z"
+    },
+    {
+      "finding_ids": [
+        "finding-medium-002"
+      ],
+      "identity_verification_status": "not_available",
+      "recommendation": "recommend_approve_with_conditions",
+      "record_kind": "architecture_review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_charter_id": "r2c-g-review-charter-001",
+      "review_record_id": "synthetic-platform-review-001",
+      "review_record_version": "1.0",
+      "reviewed_components": [
+        "topology",
+        "ownership",
+        "rollback"
+      ],
+      "reviewer_id": "synthetic-platform-reviewer",
+      "reviewer_role": "platform_architecture_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:30:00Z"
+    },
+    {
+      "finding_ids": [
+        "finding-low-001"
+      ],
+      "identity_verification_status": "not_available",
+      "recommendation": "recommend_approve_with_conditions",
+      "record_kind": "architecture_review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_charter_id": "r2c-g-review-charter-001",
+      "review_record_id": "synthetic-operations-review-001",
+      "review_record_version": "1.0",
+      "reviewed_components": [
+        "rollback",
+        "operational_drills"
+      ],
+      "reviewer_id": "synthetic-operations-reviewer",
+      "reviewer_role": "operations_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:30:00Z"
+    },
+    {
+      "finding_ids": [],
+      "identity_verification_status": "not_available",
+      "recommendation": "recommend_approve",
+      "record_kind": "architecture_review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_charter_id": "r2c-g-review-charter-001",
+      "review_record_id": "synthetic-data-review-001",
+      "review_record_version": "1.0",
+      "reviewed_components": [
+        "data_flows",
+        "candidate_assessment"
+      ],
+      "reviewer_id": "synthetic-data-reviewer",
+      "reviewer_role": "data_governance_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:30:00Z"
+    },
+    {
+      "finding_ids": [],
+      "identity_verification_status": "not_available",
+      "recommendation": "recommend_approve_with_conditions",
+      "record_kind": "architecture_review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_charter_id": "r2c-g-review-charter-001",
+      "review_record_id": "synthetic-incident-review-001",
+      "review_record_version": "1.0",
+      "reviewed_components": [
+        "change_control",
+        "rollback",
+        "operational_drills"
+      ],
+      "reviewer_id": "synthetic-incident-reviewer",
+      "reviewer_role": "incident_response_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:30:00Z"
+    }
+  ],
+  "review_charter_id": "r2c-g-review-charter-001",
+  "review_record_set_version": "1.0"
+}

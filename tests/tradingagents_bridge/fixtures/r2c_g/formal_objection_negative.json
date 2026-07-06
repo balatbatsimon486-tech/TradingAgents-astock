@@ -1,0 +1,28 @@
+{
+  "dissent_record_set_version": "1.0",
+  "records": [
+    {
+      "affected_component": "rollback",
+      "dissent_id": "synthetic-dissent-001",
+      "dissent_record_version": "1.0",
+      "position": "formal_objection",
+      "reason_code": "rollback_validation_requires_real_dry_run",
+      "resolution_status": "unresolved",
+      "reviewer_id": "synthetic-operations-reviewer",
+      "reviewer_role": "operations_reviewer",
+      "signoff_precondition": "complete_real_dry_run_review",
+      "supersede_on_architecture_change": true
+    },
+    {
+      "affected_component": "data_flows",
+      "dissent_id": "synthetic-support-001",
+      "dissent_record_version": "1.0",
+      "position": "support",
+      "reason_code": "offline_data_flow_contract_clear",
+      "resolution_status": "not_applicable",
+      "reviewer_id": "synthetic-data-reviewer",
+      "reviewer_role": "data_governance_reviewer",
+      "supersede_on_architecture_change": true
+    }
+  ]
+}

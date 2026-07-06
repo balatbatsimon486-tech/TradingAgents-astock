@@ -1,0 +1,22 @@
+{
+  "requests": [
+    {
+      "approval_required_roles": [
+        "security_owner",
+        "risk_owner"
+      ],
+      "approval_state": "not_approved",
+      "compensating_controls": [
+        "real_architecture_signoff_precondition"
+      ],
+      "control_id": "identity_verification",
+      "real_approvers_assigned": false,
+      "requested_by_role": "operations_owner",
+      "requested_expiry": "2030-01-15T00:00:00Z",
+      "requested_reason_code": "synthetic_exception_review",
+      "waiver_request_id": "waiver-request-001",
+      "waiver_request_version": "1.0"
+    }
+  ],
+  "waiver_request_set_version": "1.0"
+}

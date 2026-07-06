@@ -1,0 +1,36 @@
+{
+  "allowed_transitions": [
+    "draft_to_sealed_for_signoff",
+    "sealed_for_signoff_to_superseded",
+    "sealed_for_signoff_to_expired"
+  ],
+  "approved_state_available": false,
+  "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+  "evidence_state": "superseded",
+  "evidence_valid_until": "2030-01-01T00:30:00Z",
+  "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+  "supersede_policy_id": "r2c-g-supersede-policy-001",
+  "supersede_policy_version": "1.0",
+  "supersede_triggers": [
+    "stable_baseline_change",
+    "architecture_package_hash_change",
+    "candidate_catalog_change",
+    "evaluation_policy_change",
+    "recommended_candidate_change",
+    "topology_node_or_edge_change",
+    "trust_zone_change",
+    "data_flow_change",
+    "ownership_matrix_change",
+    "separation_of_duties_change",
+    "change_control_plan_change",
+    "rollback_plan_change",
+    "drill_plan_change",
+    "required_real_world_actions_change",
+    "new_critical_or_high_finding",
+    "finding_severity_increase",
+    "risk_acceptance_or_waiver_request_change",
+    "review_charter_or_required_roles_change",
+    "review_evidence_expiry",
+    "real_vendor_or_endpoint_detected"
+  ]
+}

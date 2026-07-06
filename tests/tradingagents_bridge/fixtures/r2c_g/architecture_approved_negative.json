@@ -1,0 +1,51 @@
+{
+  "approved_decision": null,
+  "architecture_decision_approved": true,
+  "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+  "conditions": [
+    "complete_real_architecture_signoff",
+    "resolve_all_real_world_actions"
+  ],
+  "decision_record_id": "r2c-g-adr-001",
+  "decision_record_version": "1.0",
+  "decision_state": "draft_ready_for_signoff",
+  "deployment_authorized": false,
+  "network_change_authorized": false,
+  "open_findings": [
+    "finding-medium-001",
+    "finding-medium-002",
+    "finding-low-001"
+  ],
+  "procurement_approved": false,
+  "proposed_decision": "approve_offline_architecture_with_conditions",
+  "real_signoff_completed": false,
+  "real_signoff_required": true,
+  "required_real_world_actions": [
+    "assign_real_reviewers",
+    "verify_all_reviewer_identities",
+    "verify_reviewer_roles_and_authority",
+    "complete_real_architecture_review_meeting",
+    "verify_all_detached_signatures",
+    "review_all_findings",
+    "close_or_approve_handling_for_critical_high_findings",
+    "review_medium_finding_remediation",
+    "resolve_unresolved_dissent",
+    "approve_or_reject_risk_acceptance_requests",
+    "approve_or_reject_waiver_requests",
+    "reconfirm_stable_baseline",
+    "reconfirm_architecture_package_unchanged",
+    "reconfirm_candidates_and_scoring_unchanged",
+    "reconfirm_topology_and_data_flows_unchanged",
+    "reconfirm_ownership_and_separation_unchanged",
+    "reconfirm_change_rollback_and_drill_plans_unchanged",
+    "complete_independent_real_vendor_due_diligence",
+    "complete_legal_procurement_data_protection_and_security_approvals",
+    "separately_approve_any_real_deployment_or_network_change"
+  ],
+  "review_evidence_package_hash": "pending-offline-evidence-hash",
+  "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+  "unresolved_dissent": [
+    "synthetic-dissent-001"
+  ],
+  "vendor_selection_approved": false
+}

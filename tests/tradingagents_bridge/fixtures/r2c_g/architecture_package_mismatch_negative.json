@@ -1,0 +1,32 @@
+{
+  "architecture_approved": false,
+  "architecture_package_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "architecture_package_sealed": true,
+  "component_hashes": {
+    "assessment_result_hash": "b988451f17046f79561c5a2fa69e03a4935b0cceb6c99fea4aa8c554059d8bb6",
+    "candidate_catalog_hash": "43b47ae2b3c059e61e79dfa7d32318e65af438f229e1a51d6f5a6bc33940847d",
+    "change_control_hash": "c86d555eeb8f78a2fb639de5308650dd21d9aefb27a87c2a4269ddb656a498d4",
+    "data_flow_set_hash": "f59c342793b7cb6488820f19c6d7aa161ee2091cf57510b10cfe5b9b926abb54",
+    "deployment_topology_hash": "caed8508283c5ccd8f5e46a501854afe835772284263390a51a8140a08089536",
+    "drill_plan_hash": "20faba336bdd8dbb3a9646ad444da0cb2f06cfd14f2196e849f706bd755f12eb",
+    "evaluation_policy_hash": "d31bfbe2fdbe950183038528c246644e917f5c1dcfe81be817c0389c8308ef86",
+    "evidence_bundle_hash": "555bafbd7d3f98501ca83f3dbfb87fac77c348e3a333d2cdac4e209dbf9dca91",
+    "ownership_matrix_hash": "8088ea142dd4231afaf72ce7b0740aa13100ec05de58b6b6aaa3ce92f581763f",
+    "recommendation_set_hash": "5c4ecc815dc4b6acaf2dc44deb6c5122883e996a64721bc480c153925be5b198",
+    "required_real_world_actions_hash": "b3cd368c01d91313d1ddb53de9ce4aa50b24a3dd1934402e86e4bdf4e8efdb86",
+    "rollback_plan_hash": "ac67f0a363bc37ef96cb732d366d9c4393943fa9c86a53785084f784837d4886",
+    "trust_zone_model_hash": "fccd6f6d71da9207335e17a2d9bf282bf13ce47687ce989ae2ece25d10e46f20"
+  },
+  "deployment_authorized": false,
+  "network_change_authorized": false,
+  "prerequisite_evidence_version": "1.0",
+  "procurement_approved": false,
+  "ready_for_architecture_review": true,
+  "real_integration_started": false,
+  "real_review_completed": false,
+  "real_signatures_verified": false,
+  "review_evidence_sealing_allowed": true,
+  "source_stage": "R2C-F",
+  "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+  "vendor_selected": false
+}

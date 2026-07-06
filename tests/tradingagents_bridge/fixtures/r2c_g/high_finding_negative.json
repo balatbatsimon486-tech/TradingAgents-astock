@@ -1,0 +1,65 @@
+{
+  "findings": [
+    {
+      "affected_component": "rollback",
+      "category": "operational_validation",
+      "description_code": "real_dry_run_required_before_deployment",
+      "due_condition": "before_real_integration",
+      "evidence_reference": "r2c-f-rollback-plan",
+      "finding_id": "finding-medium-001",
+      "owner_role": "platform_owner",
+      "remediation_id": "remediation-001",
+      "remediation_required": true,
+      "risk_acceptance_allowed": false,
+      "severity": "high",
+      "status": "open",
+      "waiver_allowed": false
+    },
+    {
+      "affected_component": "change_control",
+      "category": "risk_tradeoff",
+      "description_code": "manual_change_window_needs_real_approval",
+      "due_condition": "before_real_signoff",
+      "evidence_reference": "r2c-f-change-control",
+      "finding_id": "finding-medium-002",
+      "owner_role": "security_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": true,
+      "severity": "medium",
+      "status": "risk_acceptance_requested",
+      "waiver_allowed": false
+    },
+    {
+      "affected_component": "operational_drills",
+      "category": "tabletop_followup",
+      "description_code": "tabletop_schedule_to_be_confirmed",
+      "due_condition": "before_real_deployment",
+      "evidence_reference": "r2c-f-drill-plan",
+      "finding_id": "finding-low-001",
+      "owner_role": "operations_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": false,
+      "severity": "low",
+      "status": "waiver_requested",
+      "waiver_allowed": true
+    },
+    {
+      "affected_component": "candidate_assessment",
+      "category": "documentation",
+      "description_code": "synthetic_candidate_context_only",
+      "due_condition": "none",
+      "evidence_reference": "r2c-f-candidate-catalog",
+      "finding_id": "finding-info-001",
+      "owner_role": "research_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": false,
+      "severity": "informational",
+      "status": "not_applicable",
+      "waiver_allowed": false
+    }
+  ],
+  "findings_version": "1.0"
+}

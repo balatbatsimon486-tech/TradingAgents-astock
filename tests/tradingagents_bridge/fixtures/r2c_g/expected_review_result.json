@@ -1,0 +1,490 @@
+{
+  "approved_decision": null,
+  "architecture_decision_approved": false,
+  "architecture_decision_record_ready": true,
+  "architecture_review_completed": false,
+  "architecture_review_contract_version": "1.0",
+  "architecture_review_evidence_sealed": true,
+  "architecture_review_package_hash": "9b145c9aecd743d5358e15ccba84662ce604c086ec4d417a206ae31ba63a795e",
+  "audit": {
+    "architecture_review_contract_version": "1.0",
+    "architecture_review_evidence_sealed": true,
+    "architecture_review_package_hash": "9b145c9aecd743d5358e15ccba84662ce604c086ec4d417a206ae31ba63a795e",
+    "audit_hash": "3d9b112ad7a3a8bec77a368535017c5e769288accfb2690428fae0b6826a4546",
+    "audit_schema_version": "1.0",
+    "decision": "ready_for_architecture_signoff",
+    "decision_record_draft_hash": "022db48fce528f2227802cf7de8bcb9b8f43e1393aae06e031c6eeb2a5d1bc61",
+    "dissent_set_hash": "e8ff6e1dbcd8f58babc632c7e89058d649c822afff9a6f7e8e565929e34b211f",
+    "error_codes": [],
+    "evidence_bundle_hash": "96e5e852857493a9678932435746d6a8044f60a7b33742998b2d1099b935a8c7",
+    "external_calls": {
+      "broker_called": false,
+      "credential_value_resolved": false,
+      "deployment_system_called": false,
+      "environment_read": false,
+      "identity_provider_called": false,
+      "live_execution_called": false,
+      "market_data_called": false,
+      "network_called": false,
+      "procurement_system_called": false,
+      "provider_transport_called": false,
+      "qlib_called": false,
+      "signature_service_called": false,
+      "tushare_called": false,
+      "vendor_api_called": false
+    },
+    "false_fields": {
+      "architecture_decision_approved": false,
+      "architecture_review_completed": false,
+      "credential_value_resolved": false,
+      "deployment_authorized": false,
+      "live_execution_authorized": false,
+      "network_change_authorized": false,
+      "network_execution_authorized": false,
+      "procurement_approved": false,
+      "provider_transport_called": false,
+      "real_integration_started": false,
+      "review_signatures_verified": false,
+      "reviewer_identity_verified": false,
+      "risk_acceptance_approved": false,
+      "secret_resolution_authorized": false,
+      "vendor_selection_approved": false,
+      "waiver_approved": false
+    },
+    "findings_set_hash": "6ed61be347b4f7afc2f1ed9f1261505ef614a1638699934422a2d098ed00e871",
+    "ready_for_architecture_signoff": true,
+    "remediation_plan_hash": "c07789ab8396713455e1f6b8eca63948cde1cc8d12847ef80b764e880cb08a8e",
+    "required_real_world_action_count": 20,
+    "review_charter_hash": "c08cd07565cdddec997125b031d5dfeee190c264204ad7767a13ea41c0cb2f61",
+    "review_record_set_hash": "97ecb0f62b470d515fbf415d40c97f1d77ef990b4a7ef2cb2d788a951460ae09",
+    "risk_acceptance_request_set_hash": "90ef2979976aaf4b943c87a6f765ecab86eeaf876aa955717f678f885c0d863d",
+    "stage": "tradingagents_r2c_g_offline_architecture_review",
+    "supersede_policy_hash": "130f89c5f8e962d584a7316e71acc386e1af562f0ba127ea20a90d9f6853caa8",
+    "waiver_request_set_hash": "0529c86b7222dc54a102fa4d5b893803dd7aadd322ae29900b61d019c7455460"
+  },
+  "audit_hash": "3d9b112ad7a3a8bec77a368535017c5e769288accfb2690428fae0b6826a4546",
+  "blocking_findings": [],
+  "blocking_findings_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "covered_reviewer_roles": [
+    "data_governance_reviewer",
+    "incident_response_reviewer",
+    "operations_reviewer",
+    "platform_architecture_reviewer",
+    "security_architecture_reviewer"
+  ],
+  "credential_value_resolved": false,
+  "decision": "ready_for_architecture_signoff",
+  "decision_record_draft": {
+    "approved_decision": null,
+    "architecture_decision_approved": false,
+    "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+    "conditions": [
+      "complete_real_architecture_signoff",
+      "resolve_all_real_world_actions"
+    ],
+    "decision_record_id": "r2c-g-adr-001",
+    "decision_record_version": "1.0",
+    "decision_state": "draft_ready_for_signoff",
+    "deployment_authorized": false,
+    "network_change_authorized": false,
+    "open_findings": [
+      "finding-low-001",
+      "finding-medium-001",
+      "finding-medium-002"
+    ],
+    "procurement_approved": false,
+    "proposed_decision": "approve_offline_architecture_with_conditions",
+    "real_signoff_completed": false,
+    "real_signoff_required": true,
+    "required_real_world_actions": [
+      "assign_real_reviewers",
+      "verify_all_reviewer_identities",
+      "verify_reviewer_roles_and_authority",
+      "complete_real_architecture_review_meeting",
+      "verify_all_detached_signatures",
+      "review_all_findings",
+      "close_or_approve_handling_for_critical_high_findings",
+      "review_medium_finding_remediation",
+      "resolve_unresolved_dissent",
+      "approve_or_reject_risk_acceptance_requests",
+      "approve_or_reject_waiver_requests",
+      "reconfirm_stable_baseline",
+      "reconfirm_architecture_package_unchanged",
+      "reconfirm_candidates_and_scoring_unchanged",
+      "reconfirm_topology_and_data_flows_unchanged",
+      "reconfirm_ownership_and_separation_unchanged",
+      "reconfirm_change_rollback_and_drill_plans_unchanged",
+      "complete_independent_real_vendor_due_diligence",
+      "complete_legal_procurement_data_protection_and_security_approvals",
+      "separately_approve_any_real_deployment_or_network_change"
+    ],
+    "review_evidence_package_hash": "pending-offline-evidence-hash",
+    "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+    "unresolved_dissent": [
+      "synthetic-dissent-001"
+    ],
+    "vendor_selection_approved": false
+  },
+  "decision_record_draft_hash": "022db48fce528f2227802cf7de8bcb9b8f43e1393aae06e031c6eeb2a5d1bc61",
+  "deployment_authorized": false,
+  "dissent_records": [
+    {
+      "affected_component": "rollback",
+      "dissent_id": "synthetic-dissent-001",
+      "dissent_record_version": "1.0",
+      "position": "conditional_objection",
+      "reason_code": "rollback_validation_requires_real_dry_run",
+      "resolution_status": "unresolved",
+      "reviewer_id": "synthetic-operations-reviewer",
+      "reviewer_role": "operations_reviewer",
+      "signoff_precondition": "complete_real_dry_run_review",
+      "supersede_on_architecture_change": true
+    },
+    {
+      "affected_component": "data_flows",
+      "dissent_id": "synthetic-support-001",
+      "dissent_record_version": "1.0",
+      "position": "support",
+      "reason_code": "offline_data_flow_contract_clear",
+      "resolution_status": "not_applicable",
+      "reviewer_id": "synthetic-data-reviewer",
+      "reviewer_role": "data_governance_reviewer",
+      "supersede_on_architecture_change": true
+    }
+  ],
+  "dissent_set_hash": "e8ff6e1dbcd8f58babc632c7e89058d649c822afff9a6f7e8e565929e34b211f",
+  "errors": [],
+  "evidence_bundle_hash": "96e5e852857493a9678932435746d6a8044f60a7b33742998b2d1099b935a8c7",
+  "external_calls": {
+    "broker_called": false,
+    "credential_value_resolved": false,
+    "deployment_system_called": false,
+    "environment_read": false,
+    "identity_provider_called": false,
+    "live_execution_called": false,
+    "market_data_called": false,
+    "network_called": false,
+    "procurement_system_called": false,
+    "provider_transport_called": false,
+    "qlib_called": false,
+    "signature_service_called": false,
+    "tushare_called": false,
+    "vendor_api_called": false
+  },
+  "findings_catalog": [
+    {
+      "affected_component": "candidate_assessment",
+      "category": "documentation",
+      "description_code": "synthetic_candidate_context_only",
+      "due_condition": "none",
+      "evidence_reference": "r2c-f-candidate-catalog",
+      "finding_id": "finding-info-001",
+      "owner_role": "research_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": false,
+      "severity": "informational",
+      "status": "not_applicable",
+      "waiver_allowed": false
+    },
+    {
+      "affected_component": "operational_drills",
+      "category": "tabletop_followup",
+      "description_code": "tabletop_schedule_to_be_confirmed",
+      "due_condition": "before_real_deployment",
+      "evidence_reference": "r2c-f-drill-plan",
+      "finding_id": "finding-low-001",
+      "owner_role": "operations_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": false,
+      "severity": "low",
+      "status": "waiver_requested",
+      "waiver_allowed": true
+    },
+    {
+      "affected_component": "rollback",
+      "category": "operational_validation",
+      "description_code": "real_dry_run_required_before_deployment",
+      "due_condition": "before_real_integration",
+      "evidence_reference": "r2c-f-rollback-plan",
+      "finding_id": "finding-medium-001",
+      "owner_role": "platform_owner",
+      "remediation_id": "remediation-001",
+      "remediation_required": true,
+      "risk_acceptance_allowed": false,
+      "severity": "medium",
+      "status": "remediation_planned",
+      "waiver_allowed": false
+    },
+    {
+      "affected_component": "change_control",
+      "category": "risk_tradeoff",
+      "description_code": "manual_change_window_needs_real_approval",
+      "due_condition": "before_real_signoff",
+      "evidence_reference": "r2c-f-change-control",
+      "finding_id": "finding-medium-002",
+      "owner_role": "security_owner",
+      "remediation_id": "",
+      "remediation_required": false,
+      "risk_acceptance_allowed": true,
+      "severity": "medium",
+      "status": "risk_acceptance_requested",
+      "waiver_allowed": false
+    }
+  ],
+  "findings_set_hash": "6ed61be347b4f7afc2f1ed9f1261505ef614a1638699934422a2d098ed00e871",
+  "live_execution_authorized": false,
+  "network_change_authorized": false,
+  "network_execution_authorized": false,
+  "passed": true,
+  "prerequisite_evidence_summary": {
+    "architecture_decision": "ready_for_architecture_review",
+    "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+    "architecture_stage": "tradingagents_r2c_f_offline_trust_integration_architecture",
+    "component_hashes": {
+      "assessment_result_hash": "b988451f17046f79561c5a2fa69e03a4935b0cceb6c99fea4aa8c554059d8bb6",
+      "candidate_catalog_hash": "43b47ae2b3c059e61e79dfa7d32318e65af438f229e1a51d6f5a6bc33940847d",
+      "change_control_hash": "c86d555eeb8f78a2fb639de5308650dd21d9aefb27a87c2a4269ddb656a498d4",
+      "data_flow_set_hash": "f59c342793b7cb6488820f19c6d7aa161ee2091cf57510b10cfe5b9b926abb54",
+      "deployment_topology_hash": "caed8508283c5ccd8f5e46a501854afe835772284263390a51a8140a08089536",
+      "drill_plan_hash": "20faba336bdd8dbb3a9646ad444da0cb2f06cfd14f2196e849f706bd755f12eb",
+      "evaluation_policy_hash": "d31bfbe2fdbe950183038528c246644e917f5c1dcfe81be817c0389c8308ef86",
+      "evidence_bundle_hash": "555bafbd7d3f98501ca83f3dbfb87fac77c348e3a333d2cdac4e209dbf9dca91",
+      "ownership_matrix_hash": "8088ea142dd4231afaf72ce7b0740aa13100ec05de58b6b6aaa3ce92f581763f",
+      "recommendation_set_hash": "5c4ecc815dc4b6acaf2dc44deb6c5122883e996a64721bc480c153925be5b198",
+      "required_real_world_actions_hash": "b3cd368c01d91313d1ddb53de9ce4aa50b24a3dd1934402e86e4bdf4e8efdb86",
+      "rollback_plan_hash": "ac67f0a363bc37ef96cb732d366d9c4393943fa9c86a53785084f784837d4886",
+      "trust_zone_model_hash": "fccd6f6d71da9207335e17a2d9bf282bf13ce47687ce989ae2ece25d10e46f20"
+    },
+    "external_calls": {
+      "broker_called": false,
+      "credential_value_resolved": false,
+      "deployment_system_called": false,
+      "environment_read": false,
+      "identity_provider_called": false,
+      "live_execution_called": false,
+      "market_data_called": false,
+      "network_called": false,
+      "procurement_system_called": false,
+      "provider_transport_called": false,
+      "qlib_called": false,
+      "signature_service_called": false,
+      "tushare_called": false,
+      "vendor_api_called": false
+    },
+    "source_stage": "R2C-F",
+    "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d"
+  },
+  "procurement_approved": false,
+  "proposed_decision": "approve_offline_architecture_with_conditions",
+  "provider_transport_called": false,
+  "r2c_f_architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+  "ready_for_architecture_signoff": true,
+  "real_integration_started": false,
+  "remediation_items": [
+    {
+      "blocks_real_integration": true,
+      "completion_state": "not_completed",
+      "evidence_required": [
+        "approved_dry_run_result"
+      ],
+      "finding_id": "finding-medium-001",
+      "owner_role": "platform_owner",
+      "remediation_id": "remediation-001",
+      "required_action_code": "add_real_dry_run_before_deployment"
+    }
+  ],
+  "remediation_plan_hash": "c07789ab8396713455e1f6b8eca63948cde1cc8d12847ef80b764e880cb08a8e",
+  "remediation_plan_ready": true,
+  "required_real_world_actions": [
+    "assign_real_reviewers",
+    "verify_all_reviewer_identities",
+    "verify_reviewer_roles_and_authority",
+    "complete_real_architecture_review_meeting",
+    "verify_all_detached_signatures",
+    "review_all_findings",
+    "close_or_approve_handling_for_critical_high_findings",
+    "review_medium_finding_remediation",
+    "resolve_unresolved_dissent",
+    "approve_or_reject_risk_acceptance_requests",
+    "approve_or_reject_waiver_requests",
+    "reconfirm_stable_baseline",
+    "reconfirm_architecture_package_unchanged",
+    "reconfirm_candidates_and_scoring_unchanged",
+    "reconfirm_topology_and_data_flows_unchanged",
+    "reconfirm_ownership_and_separation_unchanged",
+    "reconfirm_change_rollback_and_drill_plans_unchanged",
+    "complete_independent_real_vendor_due_diligence",
+    "complete_legal_procurement_data_protection_and_security_approvals",
+    "separately_approve_any_real_deployment_or_network_change"
+  ],
+  "required_real_world_actions_hash": "67750aa5b7171ec1d3a367d40ea5c3e926e350583153315ec32ab4a999b52478",
+  "required_reviewer_roles": [
+    "data_governance_reviewer",
+    "incident_response_reviewer",
+    "operations_reviewer",
+    "platform_architecture_reviewer",
+    "security_architecture_reviewer"
+  ],
+  "review_charter": {
+    "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+    "real_reviewers_assigned": false,
+    "real_signatures_present": false,
+    "real_signatures_required": true,
+    "requester_may_review": false,
+    "requester_role": "research_owner",
+    "required_reviewer_roles": [
+      "data_governance_reviewer",
+      "incident_response_reviewer",
+      "operations_reviewer",
+      "platform_architecture_reviewer",
+      "security_architecture_reviewer"
+    ],
+    "required_role_quorum": 5,
+    "review_charter_id": "r2c-g-review-charter-001",
+    "review_charter_version": "1.0",
+    "review_scope": [
+      "candidate_assessment",
+      "change_control",
+      "data_flows",
+      "operational_drills",
+      "ownership",
+      "rollback",
+      "topology",
+      "trust_zones"
+    ],
+    "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+    "status": "draft_for_review"
+  },
+  "review_charter_hash": "c08cd07565cdddec997125b031d5dfeee190c264204ad7767a13ea41c0cb2f61",
+  "review_findings_catalog_ready": true,
+  "review_record_set_hash": "97ecb0f62b470d515fbf415d40c97f1d77ef990b4a7ef2cb2d788a951460ae09",
+  "review_record_summary": [
+    {
+      "record_decision": "recommend_approve",
+      "review_record_id": "synthetic-data-review-001",
+      "reviewer_role": "data_governance_reviewer",
+      "synthetic_record": true
+    },
+    {
+      "record_decision": "recommend_approve_with_conditions",
+      "review_record_id": "synthetic-incident-review-001",
+      "reviewer_role": "incident_response_reviewer",
+      "synthetic_record": true
+    },
+    {
+      "record_decision": "recommend_approve_with_conditions",
+      "review_record_id": "synthetic-operations-review-001",
+      "reviewer_role": "operations_reviewer",
+      "synthetic_record": true
+    },
+    {
+      "record_decision": "recommend_approve_with_conditions",
+      "review_record_id": "synthetic-platform-review-001",
+      "reviewer_role": "platform_architecture_reviewer",
+      "synthetic_record": true
+    },
+    {
+      "record_decision": "recommend_approve_with_conditions",
+      "review_record_id": "synthetic-security-review-001",
+      "reviewer_role": "security_architecture_reviewer",
+      "synthetic_record": true
+    }
+  ],
+  "review_role_coverage_complete": true,
+  "review_signatures_verified": false,
+  "reviewer_identity_verified": false,
+  "risk_acceptance_approved": false,
+  "risk_acceptance_request_set_hash": "90ef2979976aaf4b943c87a6f765ecab86eeaf876aa955717f678f885c0d863d",
+  "risk_acceptance_requests": [
+    {
+      "approval_required_roles": [
+        "security_owner",
+        "risk_owner"
+      ],
+      "approval_state": "not_approved",
+      "business_justification_code": "synthetic_tradeoff_review",
+      "compensating_controls": [
+        "real_security_owner_review_required"
+      ],
+      "finding_id": "finding-medium-002",
+      "real_approvers_assigned": false,
+      "request_id": "risk-request-001",
+      "requested_by_role": "platform_owner",
+      "requested_expiry": "2030-01-31T00:00:00Z",
+      "requested_scope": "offline_architecture_only",
+      "risk_acceptance_request_version": "1.0"
+    }
+  ],
+  "secret_resolution_authorized": false,
+  "severity_distribution": {
+    "critical": 0,
+    "high": 0,
+    "informational": 1,
+    "low": 1,
+    "medium": 2
+  },
+  "stage": "tradingagents_r2c_g_offline_architecture_review",
+  "supersede_policy": {
+    "allowed_transitions": [
+      "draft_to_sealed_for_signoff",
+      "sealed_for_signoff_to_superseded",
+      "sealed_for_signoff_to_expired"
+    ],
+    "approved_state_available": false,
+    "architecture_package_hash": "7f5c95724b82724138a9b7a173bd5a5dbc7a6260f02cf962806bbed89e4e0682",
+    "evidence_state": "sealed_for_signoff",
+    "evidence_valid_until": "2030-01-01T00:30:00Z",
+    "stable_baseline": "1330d21562e43346502bbee5816236b4e806168d",
+    "supersede_policy_id": "r2c-g-supersede-policy-001",
+    "supersede_policy_version": "1.0",
+    "supersede_triggers": [
+      "architecture_package_hash_change",
+      "candidate_catalog_change",
+      "change_control_plan_change",
+      "data_flow_change",
+      "drill_plan_change",
+      "evaluation_policy_change",
+      "finding_severity_increase",
+      "new_critical_or_high_finding",
+      "ownership_matrix_change",
+      "real_vendor_or_endpoint_detected",
+      "recommended_candidate_change",
+      "required_real_world_actions_change",
+      "review_charter_or_required_roles_change",
+      "review_evidence_expiry",
+      "risk_acceptance_or_waiver_request_change",
+      "rollback_plan_change",
+      "separation_of_duties_change",
+      "stable_baseline_change",
+      "topology_node_or_edge_change",
+      "trust_zone_change"
+    ]
+  },
+  "supersede_policy_hash": "130f89c5f8e962d584a7316e71acc386e1af562f0ba127ea20a90d9f6853caa8",
+  "supersede_policy_ready": true,
+  "vendor_selection_approved": false,
+  "waiver_approved": false,
+  "waiver_request_set_hash": "0529c86b7222dc54a102fa4d5b893803dd7aadd322ae29900b61d019c7455460",
+  "waiver_requests": [
+    {
+      "approval_required_roles": [
+        "security_owner",
+        "risk_owner"
+      ],
+      "approval_state": "not_approved",
+      "compensating_controls": [
+        "real_architecture_signoff_precondition"
+      ],
+      "control_id": "tabletop-schedule-confirmation",
+      "real_approvers_assigned": false,
+      "requested_by_role": "operations_owner",
+      "requested_expiry": "2030-01-15T00:00:00Z",
+      "requested_reason_code": "synthetic_exception_review",
+      "waiver_request_id": "waiver-request-001",
+      "waiver_request_version": "1.0"
+    }
+  ],
+  "warnings": []
+}
