@@ -1,0 +1,31 @@
+{
+  "adapter_id": "chat-provider-adapter",
+  "adapter_version": "1.0",
+  "authorization_policy_id": "r2c-b-sandbox-single-case",
+  "binding_id": "provider-sandbox-binding-001",
+  "case_id": "synthetic-r2c-d-case-001",
+  "input_artifact_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+  "input_artifact_id": "synthetic-artifact-r2c-d-001",
+  "model_id": "provider-model-sandbox-v1",
+  "prompt_id": "institutional-research-brief",
+  "prompt_spec_hash": "3333333333333333333333333333333333333333333333333333333333333333",
+  "prompt_version": "1.0.0",
+  "provider_id": "provider-sandbox",
+  "purpose": "single_case_research",
+  "readiness_package_hash": "5095c394aa9ca9612febf3dd87da7e41a22601dd6824ac3500e77c6a54e1785b",
+  "requester_id": "synthetic-requester",
+  "requester_may_review": false,
+  "required_reviewer_roles": [
+    "research_owner",
+    "security_reviewer",
+    "platform_owner"
+  ],
+  "required_role_quorum": 3,
+  "review_manifest_id": "r2c-d-review-001",
+  "review_manifest_version": "1.0",
+  "review_state": "draft",
+  "sandbox_profile_id": "provider-sandbox-readiness-001",
+  "snapshot_id": "synthetic-snapshot-r2c-d-001",
+  "stable_baseline": "ef9a37abaf6586bf31f436d9a07ca8edb601c77d",
+  "task_type": "research_generation"
+}

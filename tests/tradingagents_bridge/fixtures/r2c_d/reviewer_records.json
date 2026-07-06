@@ -1,0 +1,51 @@
+{
+  "review_manifest_id": "r2c-d-review-001",
+  "review_record_set_version": "1.0",
+  "records": [
+    {
+      "identity_verification_status": "not_available",
+      "reason_code": "offline_contract_reviewed",
+      "recommendation": "recommend_approve",
+      "record_kind": "review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_manifest_id": "r2c-d-review-001",
+      "review_record_id": "synthetic-review-research-001",
+      "review_record_version": "1.0",
+      "reviewer_id": "synthetic-research-reviewer",
+      "reviewer_role": "research_owner",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:20:00Z"
+    },
+    {
+      "identity_verification_status": "not_available",
+      "reason_code": "offline_contract_reviewed",
+      "recommendation": "recommend_approve",
+      "record_kind": "review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_manifest_id": "r2c-d-review-001",
+      "review_record_id": "synthetic-review-security-001",
+      "review_record_version": "1.0",
+      "reviewer_id": "synthetic-security-reviewer",
+      "reviewer_role": "security_reviewer",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:20:00Z"
+    },
+    {
+      "identity_verification_status": "not_available",
+      "reason_code": "offline_contract_reviewed",
+      "recommendation": "recommend_approve",
+      "record_kind": "review_recommendation",
+      "recorded_at": "2030-01-01T00:05:00Z",
+      "review_manifest_id": "r2c-d-review-001",
+      "review_record_id": "synthetic-review-platform-001",
+      "review_record_version": "1.0",
+      "reviewer_id": "synthetic-platform-reviewer",
+      "reviewer_role": "platform_owner",
+      "signature_status": "not_available",
+      "synthetic_record": true,
+      "valid_until": "2030-01-01T00:20:00Z"
+    }
+  ]
+}
